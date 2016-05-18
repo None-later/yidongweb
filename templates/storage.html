@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}<title>云存储</title>{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/products.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/jquery.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 116px;"></div>
+{% endblock %} 
+
+{% block body %}
+<!-- BEGIN products_storage-wrap-->
+<div class="m-banner-box">
+  <a></a>
+</div>
+<article class="products-wrap w1000">
+  <nav class="c-nav-tab-btns m-tab-mar">
+    <p> <a href="computer.html">弹性计算</a> <a href="bigdata.html">大数据</a> <a class="active" href="storage.html">云存储</a> <a href="monitor.html">监控安全</a> </p>
+  </nav>
+  <section class="pro-cpmputer">
+    <div class="top_bar">
+      <h1>云存储</h1>
+      <a class="apply-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+    </div>
+    <div class="pro-cpt-box">
+      <ul class="clearfix">
+        <li> <img src="images/cloud_s1.png" alt="">
+          <p class="title c1">安全可靠</p>
+          <p class="dep">多副本支持保证安全可用</p>
+        </li>
+        <li> <img src="images/cloud_s2.png" alt="">
+          <p class="title c2">自由扩容</p>
+          <p class="dep">据需扩容存储空间</p>
+        </li>
+        <li> <img src="images/cloud_s3.png" alt="">
+          <p class="title c3">高自动化</p>
+          <p class="dep">全自动复制/再平衡/错误监测与恢复</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="pro-host storage"> <a name="kfxycc"></a>
+    <div class="pro-host-pic storage">  
+      <img src="images/cloud_b1.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">分布式存储</h2>
+      <p class="pro-host-coment"> 
+        通过分布式存储保证可承载PB级数据。具备数据的自动replication、自动re-balancing、自动failure detection和自动failure recover。无中心节点避免单点故障和性能低下。</p>
+    </div>
+  </section>
+  <section class="pro-host storage"> <a name="jsqyy"></a>
+    <div class="pro-host-pic storage">
+      <img src="images/cloud_b2.png" alt="" class="block-storage">
+    </div>    
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">块存储</h2> 
+      <p class="pro-host-coment"> 通过云盘形式为用户提供一块永久的存储盘，用户可把数据存储于该盘中，确保用户数据永久安全。</p>
+    </div>
+  </section>
+</article>
+{% endblock%}

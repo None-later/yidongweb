@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block title %}<title>资源展示</title>{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="static/js/resource/highcharts.js"></script>
+    <script type="text/javascript" src="static/js/resource/exporting.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 268px;"></div>
+{% endblock %}
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>资源使用情况</h1>
+    <a class="app-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+  </div>
+  <div class="resourcewrapper">
+    <div class="chart_wrp" id="total">
+      <div class="chart_tab total">
+        <h2>总体情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两月</li>
+          <li>上六月</li>
+          <li>上年</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="total_current">
+        <div class="tab_category">
+          <span class="cur">项目</span>
+          <span>部所</span>
+        </div>
+        <div class="bar_chart cur"><!-- <a class="project"></a> -->
+          <div id="project" style="width: 620px; height: 420px; margin: 0 auto;"></div>
+        </div>
+        <div class="bar_chart"><!-- <a class="department"></a> -->
+          <div id="department" style="width: 620px; height: 420px; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两月</div>
+      <div class="chart_bd">上六月</div>
+      <div class="chart_bd">上年</div>
+    </div>
+
+    <div class="chart_wrp" id="apply">
+      <div class="chart_tab">
+        <h2>资源调用情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>过去14天</li>
+          <li>上月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="apply_current">
+        <div class="tab_category">
+          <label>云计算</label>
+          <span class="cur">虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <label class="bigdata">大数据</label>
+          <span>虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <a class="more-btn" href="http://192.168.57.206/zabbix/dashboard.php" target="_blank">更多</a>
+        </div>
+        <div class="area_chart cur"><!-- <a class="cloud_virtual"></a> -->
+          <div id="cloudVirtual" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><!-- <a class="cloud_physical"></a> -->
+          <div id="cloudPhysical" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><a class="cloud_storage"></a></div>
+        <div class="area_chart"><a class="bigdata_virtual"></a></div>
+        <div class="area_chart"><a class="bigdata_physical"></a></div>
+        <div class="area_chart"><a class="bigdata_storage"></a></div>
+      </div>
+      <div class="chart_bd">过去14天</div>
+      <div class="chart_bd">上月</div>
+      <div class="chart_bd">上两月</div>
+    </div>
+
+    <div class="chart_wrp" id="malfunction">
+      <div class="chart_tab">
+        <h2>故障情况统计</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="malfunction_current">
+        <div class="line_chart"><!-- <a></a> -->
+          <div id="failure" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两周</div>
+      <div class="chart_bd">上一月</div>
+      <div class="chart_bd">上两月</div>
+    </div>
+
+    <div class="chart_wrp" id="application">
+      <div class="chart_tab">
+        <h2>项目资源使用情况详表</h2>
+        <ul>
+          <li class="select">上一周</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="table_bd select" id="application_current">
+        <table>
+          <tr>
+            <th>项目名称</th>
+            <th>运行时长</th>
+            <th>运行环境</th>
+            <th>机器数目</th>
+            <th>月均平均时长</th>
+            <th>外部IP数</th>
+            <th>固定IP数</th>
+            <th>故障率</th>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table_bd">上两周</div>
+      <div class="table_bd">上一月</div>
+      <div class="table_bd">上两月</div>
+      <div class="page_bar">
+        <span id="currentPage">Page &nbsp;</span>
+        <input type="text" id="pageNum" onkeyup="check_pagenum(this);" />
+        &nbsp;of&nbsp;<span class="total_page" id="totalPage">12</span>
+        <span class="page_jump">
+          <a class="cur">上一页</a>
+          <a>下一页</a>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript" src="static/js/resource/resource.js"></script>
+{% endblock%}
+
+

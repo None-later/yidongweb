@@ -1,0 +1,315 @@
+.m-case-all-banner {
+  background: #020a1d;
+}
+.case-wrap .c-nav-tab-btns {
+  margin-top: -44px;
+}
+.case-wrap .case-des {
+  height: 170px;
+  background: url("../images/bg_case_des.png") no-repeat center 0;
+  padding-top: 60px;
+}
+.case-wrap .case-des .case-des-in {
+  width: 1000px;
+  margin: 0 auto;
+}
+.case-wrap .case-des .case-des-in h3 {
+  text-align: center;
+}
+.case-wrap .case-des .case-des-in .c-paragraph {
+  text-align: center;
+  margin-top: 30px;
+}
+.case-wrap .case-list {
+  background-color: #f9f9f9;
+  padding: 40px 0 80px;
+}
+.case-wrap .case-list .case-list-in {
+  width: 1120px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+  background: url("../images/bg_case_table_l.png") no-repeat 11px 47px, url("../images/bg_case_table_r.png") no-repeat 1060px 47px, url("../images/bg_case_table_t.png") no-repeat 61px 33px, url("../images/bg_case_table_b.png") no-repeat 61px 592px;
+}
+.case-wrap .case-list h3 {
+  width: 1000px;
+  margin: 0 auto 30px;
+  font-size: 24px;
+  color: #333;
+  height: 45px;
+}
+.case-wrap .case-list .ul-wrap {
+  width: 1002px;
+  overflow: hidden;
+  margin: 0 auto;
+  background: url("../images/bg_case_table_1px.png") repeat-x 0 0px, url("../images/bg_case_table_1px.png") repeat-x 0 121px, url("../images/bg_case_table_1px.png") repeat-x 0 132px, url("../images/bg_case_table_1px.png") repeat-x 0 253px, url("../images/bg_case_table_1px.png") repeat-x 0 264px, url("../images/bg_case_table_1px.png") repeat-x 0 385px, url("../images/bg_case_table_1px.png") repeat-x 0 396px, url("../images/bg_case_table_1px.png") repeat-x 0 517px, url("../images/bg_case_table_1px.png") repeat-x 0 528px, url("../images/bg_case_table_1px.png") repeat-y 225px 0px, url("../images/bg_case_table_1px.png") repeat-y 236px 0px, url("../images/bg_case_table_1px.png") repeat-y 377px 0px, url("../images/bg_case_table_1px.png") repeat-y 388px 0px, url("../images/bg_case_table_1px.png") repeat-y 613px 0px, url("../images/bg_case_table_1px.png") repeat-y 624px 0px, url("../images/bg_case_table_1px.png") repeat-y 765px 0px, url("../images/bg_case_table_1px.png") repeat-y 776px 0px;
+}
+.case-wrap .case-list ul {
+  width: 1012px;
+}
+.case-wrap .case-list ul li {
+  float: left;
+  margin: 0 10px 0px 0;
+}
+.case-wrap .case-list ul li .item {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  margin: 0 0 10px 0px;
+}
+.case-wrap .case-list ul li .item div.pic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.case-wrap .case-list ul li .item div.pic img {
+  display: block;
+}
+.case-wrap .case-list ul li .item div.text {
+  display: none;
+  height: 90px;
+  color: #666;
+  overflow: hidden;
+  padding: 15px 15px;
+}
+.case-wrap .case-list ul li .item div.text h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 7px;
+}
+.case-wrap .case-list ul li .item div.text p.p-text {
+  display: block;
+  height: 36px;
+  overflow: hidden;
+}
+.case-wrap .case-list ul li .item div.text table.table-des {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 7px;
+}
+.case-wrap .case-list ul li .item div.text table.table-des th,
+.case-wrap .case-list ul li .item div.text table.table-des td {
+  font-weight: normal;
+  text-align: left;
+  border: 0;
+}
+.case-wrap .case-list ul li .item:last-child {
+  margin-bottom: 0;
+}
+.case-wrap .case-list ul li.w230 {
+  width: 226px;
+}
+.case-wrap .case-list ul li.w230 .item {
+  width: 224px;
+  height: 120px;
+}
+.case-wrap .case-list ul li.w230 .item div.pic {
+  width: 224px;
+  height: 120px;
+}
+.case-wrap .case-list ul li.w230 .item div.text {
+  width: 194px;
+}
+.case-wrap .case-list ul li.w230 .item div.text p.p-text {
+  width: 194px;
+}
+.case-wrap .case-list ul li.w230 .item div.text table.table-des {
+  width: 194px;
+}
+.case-wrap .case-list ul li.w230 .item div.text table.table-des th {
+  width: 65px;
+}
+.case-wrap .case-list ul li.w230 .item div.text table.table-des td {
+  width: 129px;
+}
+.case-wrap .case-list ul li.w130 {
+  width: 142px;
+}
+.case-wrap .case-list ul li.w130 .item {
+  width: 140px;
+  height: 120px;
+}
+.case-wrap .case-list ul li.w130 .item div.pic {
+  width: 140px;
+  height: 120px;
+}
+.case-wrap .case-list ul li.w130 .item div.text {
+  width: 110px;
+}
+.case-wrap .case-list ul li.w130 .item div.text p.p-text {
+  width: 110px;
+}
+.case-wrap .case-list ul li.w130 .item div.text table.table-des {
+  width: 110px;
+}
+.case-wrap .case-list ul li.w130 .item div.text table.table-des th {
+  width: 65px;
+}
+.case-wrap .case-list ul li.w130 .item div.text table.table-des td {
+  width: 45px;
+}
+/* 案例详情页 */
+.case-detail {
+  width: 1000px;
+  margin: 0 auto;
+}
+.case-detail li {
+  color: #666;
+  line-height: 18px;
+  padding: 35px 0;
+  border-bottom: 1px dashed #b3b3b3;
+}
+.case-detail li .item-top .p-pic {
+  float: left;
+}
+.case-detail li .item-top .p-pic a {
+  display: block;
+  width: 298px;
+  height: 178px;
+  padding: 1px;
+  border: 1px solid #e6e6e6;
+}
+.case-detail li .item-top .p-pic a img {
+  display: block;
+}
+.case-detail li .item-top .div-des {
+  float: right;
+  width: 670px;
+}
+.case-detail li .item-top .div-des h3 {
+  font-size: 20px;
+  color: #148cec;
+  margin: 5px 0 10px;
+}
+.case-detail li .item-top .div-des dt,
+.case-detail li .item-top .div-des dd {
+  float: left;
+  margin-bottom: 5px;
+}
+.case-detail li .item-top .div-des dt {
+  clear: both;
+}
+.case-detail li .item-top .div-des dd a {
+  margin: 0 3px;
+}
+.case-detail li .item-cont {
+  border-bottom: 1px solid #e9e9e9;
+  margin-top: 10px;
+}
+.case-detail li .item-cont .item-cont-in {
+  background-color: #f7f7f7;
+  padding: 15px 20px;
+}
+.case-detail li .item-cont .item-cont-in .item-des {
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+}
+.case-detail li .item-cont .item-cont-in .item-des p {
+  text-indent: 0em;
+  line-height: 22px;
+}
+.case-detail li .item-cont .item-cont-in .item-des .span-btn {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  display: inline-block;
+  width: 60px;
+  color: #3f9de9;
+  text-align: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+.case-detail li .item-cont .item-cont-in .item-des .span-btn em {
+  margin: 0 3px;
+}
+.case-detail li .item-cont .item-cont-in .h60 {
+  height: 66px;
+}
+.case-detail li:last-child {
+  border-bottom: 0;
+  padding-bottom: 20px;
+}
+.caselist-more {
+  text-align: right;
+  padding: 20px;
+  width: 960px;
+  margin: 0 auto;
+}
+.c-pagination {
+  margin: 20px auto 60px;
+}
+
+/****add by zly****/
+.casewrapper{
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #c3c6cd;
+  padding: 0;
+  width: 998px;
+}
+.title_bar{
+  padding-bottom: 6px;
+  margin: 32px 45px 0 32px;
+  border-bottom: 1px solid #cacfc5;
+  position: relative;
+}
+.title_bar span{
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  color: #0099cc;
+}
+.casewrapper p{
+  margin: 26px 45px 0;
+  color: #323232;
+  font-size: 15px;
+  font-family:"Microsoft Yahei","微软雅黑",Tahoma,Helvetica,Arial,sans-serif;
+  line-height: 28px;
+}
+
+.casewrapper .table_bd {
+  display: block;
+  padding: 35px 48px 0 48px; 
+}
+.casewrapper table th, .casewrapper table td{ 
+  text-align: center;
+}
+table.project th:first-child {
+    padding-left: 8px;
+}
+table.project td:first-child {
+    padding-left: 8px;
+}
+table.resource th:first-child {
+    padding-left: 8px;
+}
+table.resource td:first-child {
+    padding-left: 8px;
+}
+table.resource{
+  margin-bottom: 75px;
+}
+.table_title{
+
+}
+.case_chart {
+  padding: 40px 0 0;
+  margin-left: 60px; 
+}
+.case_chart a {
+    background: url("../images/usercase.png") no-repeat;
+    display: inline-block;
+    height: 328px;
+    width: 754px;
+}
+.resource_text{
+  text-align: center;
+  margin-bottom: 20px;
+}

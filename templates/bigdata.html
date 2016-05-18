@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}<title>大数据</title>{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/products.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/jquery.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 116px;"></div>
+{% endblock %}
+
+{% block body %}
+<!-- BEGIN products_bigdata-wrap-->
+<div class="m-banner-box">
+  <a></a>
+</div>
+<article class="products-wrap w1000">
+  <nav class="c-nav-tab-btns m-tab-mar">
+    <p> <a href="computer.html">弹性计算</a> <a class="active" href="bigdata.html">大数据</a> <a href="storage.html">云存储</a> <a href="monitor.html">监控安全</a> </p>
+  </nav>
+  <section class="pro-computer">
+    <div class="top_bar">
+      <h1>大数据</h1>
+      <a class="apply-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+    </div>
+    <div class="pro-cpt-box">
+      <ul class="clearfix">
+        <li> <img src="images/bigdata_s1.png" alt="">
+          <p class="title b1">海量</p>
+          <p class="dep">支持海量的数据存储</p>
+        </li>
+        <li> <img src="images/bigdata_s2.png" alt="">
+          <p class="title b2">全面</p>
+          <p class="dep">支持结构化非结构化数据</p>
+        </li>
+        <li> <img src="images/bigdata_s3.png" alt="">
+          <p class="title b3">快速</p>
+          <p class="dep">快速分析处理请求响应</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="pro-host bigdata"> <a name="gxxsjk"></a>
+    <div class="pro-host-pic">   
+      <img src="images/Hdfs.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持HDFS</h2>
+      <p class="pro-host-coment"> 
+        HDFS是分布式文件系统，具有高可用、高可扩展性,高可靠性的特性。适用于结构化、非结构化数据存储。HDFS可以执行的操作有创建、删除、移动或重命名文件等，架构类似于传统的分级文件系统。由于NameNode是唯一的，HDFS存在单点故障的可能。</p> 
+    </div>
+  </section>
+  <section class="pro-host bigdata"> <a name="gxxsjk"></a>
+    <div class="pro-host-pic">   
+      <img src="images/Hbase.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持Hbase</h2>
+      <p class="pro-host-coment"> 
+        HBase是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统，利用 HBase技术可在廉价PC Server上搭建起大规模结构化存储集群。类似Google Bigtable利用GFS作为其文件存储系统，HBase利用Hadoop HDFS作为其文件存储系统。适用于帐单、详单查询系统。</p> 
+    </div>
+  </section>
+  <section class="pro-host"> <a name="gxxsjk"></a>
+    <div class="pro-host-pic">   
+      <img src="images/Spark.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持Spark</h2>
+      <p class="pro-host-coment"> 
+        分布式并行计算框架，其核心是弹性分布式数据集RDD，RDD可以Cache到内存中，每次下一个操作可以直接从内存中输入，省去了MapReduce大量的磁盘IO操作，大大提升了效率。适用批处理任务：比如用户行为分析、优惠策略预测仿真、欠费和动态防欺诈行为分析、客户关系管理 分析、经营成本与收入分析、网络管理和网络优化分析等。</p> 
+    </div>
+  </section>
+  <section class="pro-host"> <a name="gxxsjk"></a>
+    <div class="pro-host-pic">   
+      <img src="images/Impala.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持Impala</h2>
+      <p class="pro-host-coment"> 
+        主要为分析型查询负载而设计，该分布式查询引擎由Query Planner、Query Coordinator和Query Exec Engine三部分组成，是为Hadoop生态系统打造的开源MPP数据库。适用于批处理任务：比如用户行为分析、优惠策略预测仿真、欠费和动态防欺诈行为分析、客户关系管理分析、经营成本与收入分析、网络管理和网络优化分析等。</p> 
+    </div>
+  </section>
+  <section class="pro-host"> <a name="gxxsjk"></a>
+    <div class="pro-host-pic">   
+      <img src="images/Hive.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持Hive</h2>
+      <p class="pro-host-coment"> 
+        提供对存储于Hadoop兼容文件系统中的大数据集进行简单地数据汇总、查询、分析等处理。Hive使用一种类似于SQL的语言(称为HiveQL)来组织数据和对数据进行查询。适用于批处理任务:比如用户行为分析、优惠策略预测仿真、欠费和动态防欺诈行为分析、客户关系管理分析、经营成本与收入分析、网络管理和网络优化分析等。</p> 
+    </div>
+  </section>
+  <section class="pro-host bigdata"> <a name="gxxsjk"></a>   
+    <div class="pro-host-pic">
+      <img src="images/Streaming.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">支持Spark Streaming</h2>
+      <p class="pro-host-coment"> 
+        针对流式数据的分布式、高可用、低延迟、具有自身容错性的实时计算技术，它根据一组处理规则来进行动作，spark streaming是spark生态系统的一个组件。适用于实时营销，在线个性化推荐。</p> 
+    </div>
+  </section>
+</article>
+<!-- END products_computer-wrap --> 
+{% endblock%}

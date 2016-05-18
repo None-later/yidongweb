@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}<title>弹性计算</title>{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/products.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/jquery.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 116px;"></div>
+{% endblock %}
+
+{% block body %}
+<!-- BEGIN products_computer-wrap-->
+<div class="m-banner-box">
+  <a></a>
+</div>
+<article class="products-wrap w1000">
+  <nav class="c-nav-tab-btns m-tab-mar">
+    <p> <a class="active" href="computer.html">弹性计算</a> <a href="bigdata.html">大数据</a> <a href="storage.html">云存储</a> <a href="monitor.html">监控安全</a> </p>
+  </nav>
+  <section class="pro-computer">
+    <div class="top_bar">
+      <h1>弹性计算</h1>
+      <a class="apply-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+    </div>
+    <div class="pro-cpt-box">
+      <ul class="clearfix">
+        <li> <img src="images/computer_s1.png" alt="">
+          <p class="title s1">快速创建</p>
+          <p class="dep">分钟级批量创建云主机</p>
+        </li>
+        <li> <img src="images/computer_s2.png" alt="">
+          <p class="title s2">灵活扩容</p>
+          <p class="dep">云主机按需CPU内存磁盘扩展</p>
+        </li>
+        <li> <img src="images/computer_s3.png" alt="">
+          <p class="title s3">镜像丰富</p>
+          <p class="dep">提供含centos/Win等多种镜像</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="pro-host"> <a name="gxnzj"></a>
+    <div class="pro-host-pic">
+      <img src="images/computer_b1.png" alt="高性能云主机">
+    </div>   
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">高性能云主机</h2>
+      <p class="pro-host-coment">   
+        云主机提供多种实例类型（CPU、内存）、带宽大小、存储盘选择，快速响应客户需求，分钟级别的创建响应。满足不同用户对高并发读写和高性能的要求，针对计算密集型、IO密集型等不同类型的需求做分类处理，针对高安全性、高体验性需求做策略处理。通过块存储确保用户数据的持久性、高可靠性。为了提高用户体验，支持10分钟内停机升级 CPU 和内存。确保云主机99% 的高可用性，为业务的稳定运行提供保障。</p>    
+    </div>
+  </section>
+  <section class="pro-host computer"> <a name="fzjh"></a>
+    <div class="pro-host-pic">
+      <img src="images/computer_b2.png" alt="镜像和规格">
+    </div>    
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">镜像和规格</h2>
+      <p class="pro-host-coment">我们为您提供多种操作系统镜像，用户可以根据需求，选择不同的镜像。用户也可以根据定制需求进行定制特定的镜像。我们提供多种不同的虚拟机规格的大小，可以根据具体需求选择具体规格。</p>
+    </div>
+  </section>
+  <section class="pro-host"> <a name="nrffwcdn"></a>
+    <div class="pro-host-pic">
+      <img src="images/computer_b3.png" alt="网络">
+    </div>    
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">网络</h2>
+      <p class="pro-host-coment">提供丰富的网络，支持不同厂家的产品。网络可以提供不同的安全策略。通过物理划分vlan对不同机器进行隔离。支持管理网络、数据网络分离。用户可以完全掌控自己的虚拟网络，包括选择自有 IP 地址范围、划分网段、配置路由表和网关等。此外用户也可以通过相关策略对网络安全规则进行多重控制。</p>
+    </div>
+  </section>
+</article>
+<!-- END products_computer-wrap --> 
+{% endblock%}
