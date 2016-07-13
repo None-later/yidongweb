@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/docs/jquery.js"></script>
+<script type="text/javascript" src="static/js/docs/jquery.simplemodal.1.4.3.min.js"></script>
+<script type="text/javascript" src="static/js/docs/underscore.js"></script>
+<script type="text/javascript" src="static/js/docs/doctools.js"></script>
+<script type="text/javascript" src="static/js/docs/translations.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 420px;"></div>
+{% endblock %}
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>文档中心</h1>
+    <span class="input_box">
+      <a class="frm_input_append" onclick="" href="javascript:void(0);">
+        <i class="search_icon"></i>
+      </a>
+      <input class="text" type="text" id="search" name="search" onfocus="if (value =='请输入关键词'){value =''}" onblur="if (value ==''){value ='请输入关键词'}" value="请输入关键词" />
+    </span>
+  </div>
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+        <div class="section" id="faq">
+          <span id="id1"></span>
+          <!-- <h1 class="faq">常见问题 Q &amp; A<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h1> -->
+
+          <div class="top_bar">
+            <h1>常见问题 Q &amp; A</h1>
+            <a class="app-btn" target="_blank" href="http://confluence.cmri.cn/dashboard.action">Confluence</a>
+          </div>
+                       
+             <p class="rubric" id="ip-ip-ssh-ping-ip"><strong>Q:&nbsp;虚拟机的IP地址可以自己配吗？</strong></p>
+            <p>A:&nbsp;虚拟机内部网卡是通过dhcp获取的子网IP，我们会按照需要配置192.168网段的实验室大网IP给虚拟机。因此请勿直接将192.168网段的IP写到虚拟机网卡配置文件中。</p>
+            <p class="rubric" id="id3"><strong>Q:&nbsp;如何挂载数据盘？</strong></p>
+            <p>A:&nbsp;可以在虚拟机里面按照下面步骤进行：</p>
+            <div class="highlight-none">
+              <div class="highlight">
+                <pre># parted -s /dev/vdb mklabel gpt
+                </pre>
+              </div>
+            </div>
+              <p>特别注意：请不要将数据磁盘挂载到如 /usr /var 等linux系统默认路径下，以免原有路径下的文件隐藏，可能会导致包括ssh在内的多个服务无法再次正常启动。</p>
+
+              <p class="rubric" id="windows-ip"><strong>Q:&nbsp;是否允许修改grub、分区表等影响操作系统正常启动的配置呢？</strong></p>
+              <p>A:&nbsp;请用户尽量不要自行修改如grub、分区表 等影响操作系统正常启动的配置，以免导致系统异常。</p>
+
+              <p class="rubric" id="ssh-linux"><strong>Q:&nbsp;为什么我的云主机不可以上外网？</strong></p>
+              <p>A:&nbsp;只有绑定了公网 IP 的主机才可以访问外网。</p>
+
+
+              <p class="rubric" id="id6"><strong>Q:&nbsp;目前都支持哪些规格的云主机呢？</strong></p>
+              <p>A:&nbsp;具体的云主机规格如下所示：</p>
+              <table>
+                <tr>
+                  <th>规格名称</th>
+                  <th>CPU数目</th>
+                  <th>内存大小</th>
+                  <th>磁盘大小</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>Small型</td>
+                  <td>1</td>
+                  <td>2048</td>
+                  <td>20G</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>标准型</td>
+                  <td>2</td>
+                  <td>4096</td>
+                  <td>20G</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Large型</td>
+                  <td>4</td>
+                  <td>16384</td>
+                  <td>20G</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>XLarge型</td>
+                  <td>8</td>
+                  <td>32768</td>
+                  <td>40G</td>
+                  <td></td>
+                </tr>
+              </table>              
+              
+              <p class="rubric" id="id6"><strong>Q:&nbsp;目前都支持哪些镜像呢？</strong></p>
+              <p>A:&nbsp;具体支持镜像的都有：</p>
+              <table>
+                <tr>
+                  <th>镜像名称</th>
+                  <th>操作系统</th>
+                  <th>镜像大小</th>
+                  <th>镜像格式</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>Ubuntu 15.04</td>
+                  <td>Ubuntu</td>
+                  <td>10G</td>
+                  <td>raw</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ubuntu 14</td>
+                  <td>Ubuntu</td>
+                  <td>10G</td>
+                  <td>raw</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Centos 6.7</td>
+                  <td>centos</td>
+                  <td>10G</td>
+                  <td>Qcow2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Centos 6.5</td>
+                  <td>centos</td>
+                  <td>10G</td>
+                  <td>raw</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Centos 7.1</td>
+                  <td>centos</td>
+                  <td>10G</td>
+                  <td>Qcow2</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>redhat 6.5</td>
+                  <td>redhat</td>
+                  <td>10G</td>
+                  <td>raw</td>
+                  <td></td>
+                </tr>
+              </table>
+
+
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+      <h3><a href="#">內容目录</a></h3>
+      <ul>
+        <li class="toctree-l1"><a class="reference internal" href="/docs">使用文档</a></li>
+      </ul>
+      <ul class="current">
+        <b class="current_b"></b>
+        <li class="toctree-l1 current"><a class="current reference internal" href="javascript:void(0);">常见问题</a></li>
+      </ul>
+      <ul>
+        <li class="toctree-l1 query"><span class="reference internal query">服务咨询</span>
+          <p>电话<span>010-52686688</span></p>
+          <p>QQ<span class="qq">27502000</span></p>
+          <p>飞信<span>99433222</span></p>
+        </li>
+      </ul>
+      <script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>  
+  <div class="clearer">
+  </div>   
+</div>
+<div class="query_btn">留言咨询</div>
+<div class="query_bd">
+    <a class="query_closed" href="javascript:void(0);" onClick="$(this).parent().hide();"></a>
+    <div class="query_item">
+      <span class="input_box">
+        <input class="info_input" type="text" id="title" name="title" value="请输入20字以内咨询题目" onfocus="if (value =='请输入20字以内咨询题目'){value =''}" onblur="if (value ==''){value='请输入20字以内咨询题目'}" />
+      </span>
+    </div>
+    <div class="query_item">
+      <textarea id="content" name="content" value="请输入您希望咨询的问题"
+      onkeyup="textCount('content',600,'remainCount')"
+      onpropertychange="textCount('content',600,'remainCount')"
+      oninput="textCount('content',600,'remainCount')" onfocus="if (value =='请输入您希望咨询的问题'){value =''}" onblur="if (value ==''){value='请输入您希望咨询的问题'}">
+      </textarea>
+      <div class="editor_toolbar">
+        <span id="remainCount">还可以输入 600 字</span>
+      </div>
+    </div>
+    <div class="btn_bar">
+      <a class="canBtn" href="javascript:void(0);" onClick="$(this).parent().parent().hide();">取 消</a>
+      <a id="submit" class="subBtn" href="javascript:void(0);">提 交</a>      
+    </div>
+</div> 
+<div class="dialog_wrp" id="dialog" style="display: none;">
+  <a class="query_closed" href="javascript:void(0);" onClick="$.modal.close();"></a>
+  <div class="dialog_md">
+      <i class="success"></i>
+      <p>恭喜您提交成功！</p>
+      <p>请耐心等到工作人员反馈</p>
+  </div>
+  <div class="dialog_ft">
+    <a class="okBtn" href="javascript:void(0);" onClick="$.modal.close();">确定</a> 
+  </div>
+</div>
+<div class="dialog_wrp" id="dialog1" style="display: none;">
+  <a class="query_closed" href="javascript:void(0);" onClick="$.modal.close();"></a>
+  <div class="dialog_md">
+      <i class="fail"></i>
+      <p>提交失败</p>
+      <p>请重新提交</p>
+  </div>
+  <div class="dialog_ft">
+    <a class="canBtn" href="javascript:void(0);" onClick="$.modal.close();">取消</a>
+    <a class="subBtn" href="javascript:void(0);" onClick="$.modal.close();">确定</a> 
+  </div>
+</div>
+
+<script type="text/javascript" src="static/js/docs/faq.js"></script>
+{% endblock%}

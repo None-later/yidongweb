@@ -1,0 +1,245 @@
+.m-login {
+  height: 610px;
+  background: url("/static/images/bg_1920x610_banner.png") center no-repeat #16171e;
+}
+.m-login .login-wrap {
+  margin: 0 auto;
+}
+.m-login .login-wrap .login-wbanner {
+  float: left;
+  padding: 225px 0 0 30px;
+}
+.m-login .login-wrap .login-box {
+  float: right;
+  width: 302px;
+  padding: 22px 30px;
+  background: #fff;
+  margin: 110px 30px 0 0;
+}
+.m-login .login-wrap .login-box .login-title {
+  color: #595959;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  padding-bottom: 5px;
+}
+.m-login .login-wrap .login-box .login-input {
+  width: 278px;
+  color: #939495;
+  background: #fbfbfb;
+}
+.m-login .login-wrap .login-box h4 {
+  font-size: 14px;
+  color: #595959;
+  margin-top: 10px;
+}
+.m-login .login-wrap .login-box h4,
+.m-login .login-wrap .login-box .login-input {
+  margin-bottom: 10px;
+  color: #646464;
+  font-family:"\5FAE\8F6F\96C5\9ED1";
+}
+.m-login .login-wrap .login-box .login-ext {
+  position: relative;
+  font-size: 14px;
+  height: 20px;
+  line-height: 26px;
+}
+.m-login .login-wrap .login-box .login-ext .login-extlink {
+  color: #2494ed;
+  position: absolute;
+  right: 0;
+}
+.m-login .login-wrap .login-box .login-btn {
+  width: 300px;
+  margin: 20px 0 40px;
+  font-family: "\5FAE\8F6F\96C5\9ED1";
+  font-size: 18px;
+}
+.m-login .login-wrap .login-box .login-other {
+  vertical-align: top;
+  padding-bottom: 27px;
+}
+.m-login .login-wrap .login-box .login-other label,
+.m-login .login-wrap .login-box .login-other a {
+  float: left;
+  margin-right: 30px;
+}
+.m-login .login-wrap .login-box .login-other label {
+  color: #595959;
+  font-size: 14px;
+}
+.m-login .login-wrap .login-box .login-nohave {
+  border-top: 1px solid #ccc;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #595959;
+}
+.m-login .login-wrap .login-box .login-nohave .login-notlink {
+  color: #2494ed;
+}
+.login-error {
+  display: inline-block;
+  border: 1px solid #f00;
+  height: 34px;
+  width: 278px;
+  background: #ffefef;
+  color: #413d3d;
+  line-height: 34px;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+.login-error label {
+  padding-left: 20px;
+  background: url("/static/images/l_bg_icon.png") left -116px no-repeat;
+  display: inline-block;
+}
+.login-error .login-error-cloas {
+  position: relative;
+  right: -10px;
+  width: 34px;
+  height: 34px;
+  float: right;
+  background: url("/static/images/l_bg_icon.png") 11px -160px no-repeat;
+}
+input.c-error{
+  border: 1px solid #f00;
+  -moz-box-shadow: 0 0 2px 0px #f00;
+  -webkit-box-shadow: 0 0 2px 0px #f00;
+  box-shadow: 0 0 2px 0px #f00;
+}
+label.c-error{
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  color: #f00;
+  padding-left: 20px;
+  background: url("/static/images/l_bg_icon.png") left -218px no-repeat;
+}
+
+/*login_other*/
+.m-login .login-wrap .login-other {
+  float: none;
+  display: inline-block;
+  text-align: left;
+  margin-right: 0;
+}
+.al-center {
+  text-align: center;
+}
+/*nav-head add by Sarah*/
+.nav-line-bottom{
+  bottom:-1px\0;
+}
+
+/* 图片验证码 */
+.imgcode-pos {
+  margin-top: 5px;
+}
+.reg-title, .imgCode-box, .img-code {
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.reg-title {
+  height: 24px;
+  padding-top:7px;
+}
+
+.imgCode-box .c-input {
+  width: 90px;
+}
+
+.img-code .login-yz {
+  display: inline-block;
+  width: 70px;
+  height: 36px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.img-code .click-fresh {
+  display: inline-block;
+  height: 24px;
+  padding-top: 6px;
+  margin-left: 10px;
+}
+.span-qrcode-success {
+    background: url("/static/images/l_bg_icon.png") no-repeat scroll 0 -265px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.span-qrcode-failed {
+    background: url("/static/images/l_bg_icon.png") no-repeat scroll 0 -219px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+/*手机安全令登录*/
+.mfa-direct{
+  margin: 15px 0 10px 0;
+  font-size: 14px;
+}
+.grid-box{
+  position: absolute;
+  width: 310px;
+  height: 38px;
+  background: url("/static/images/grid.png") no-repeat;
+}
+.mfa-grid{
+  border: none;
+  letter-spacing: 43px;
+  height: 100%;
+  width: 350px;
+}
+.grid-block{
+  position: absolute;
+  right: -30px;
+  top: 0px;
+  width: 30px;
+  height: 40px;
+  background: #fff;
+}
+.mfa-find{
+  display: inline-block;
+  color: #3A97EA;
+  font-size: 14px;
+  margin-top: 44px;
+  margin-left: 230px;
+}
+.mfa-icon{
+  width: 140px;
+  height: 146px;
+  background: url("/static/images/mfa-icon.png") no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 64px 0 -21px 192px;
+}
+label.m-error{
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  color: #f00;
+  padding-left: 20px;
+  background: url("/static/images/l_bg_icon.png") left -218px no-repeat;
+  margin: 10px 0 0 -20px;
+}
+#scCode-error{
+  display: inline-block;
+  width: 100px;
+}
+.splice-input{
+  width: 45px;
+  height: 100%;
+  text-align: center;
+  margin-right: 3px;
+}
+
+

@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}研发资源池首页{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/bed.css" type="text/css">
+<link rel="stylesheet" href="static/css/index.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/39ec1130.js"></script>
+<script type="text/javascript" src="static/js/7e23a704.js"></script> 
+<script type="text/javascript" src="static/js/ff9c3cb9.js"></script>
+<script type="text/javascript" src="static/js/ba2b651d.js"></script> 
+<script type="text/javascript" src="static/js/2a1f7d5e.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 116px; left: 0px;"></div>
+{% endblock %}
+
+{% block body %}
+<!-- big banner start -->
+<section class="c-slide c-slide-main" id="slide_main">
+  <div class="c-slide-cont">
+    <ul >
+      <li >
+        <div class="li-box">
+          <a target="_blank" href="#" class="banner1"></a>
+        </div>
+      </li>
+      <li >
+        <div class="li-box">
+          <a target="_blank" href="#" class="banner2"></a>
+        </div>
+      </li>
+      <li>
+        <div class="li-box">
+          <a target="_blank" href="#" class="banner3"></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="c-slide-pages">
+    <p class="txC"></p>
+  </div>
+</section>
+
+<!-- 首页（start） -->
+<div class="ksyun-wrap">
+
+  <article class="main">
+    <section class="c-itemM w-gxnyzj">
+      <div class="c-itemM-in">
+        <div class="c-itemM-des">
+          <h3>弹性计算</h3>
+          <p> 云主机提供简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。云主机提供多种实例类型（CPU、内存）、带宽大小、存储盘选择，快速响应客户需求，分钟级别的创建响应。满足不同用户对高并发读写和高性能的要求，针对计算密集型、IO密集型等不同类型的需求做分类处理，针对高安全性、高体验性需求做策略处理。通过块存储确保用户数据的持久性、高可靠性。</p>
+          <p class="c-itemM-btn-bar"> <a href="{{ url_for('computer') }}" class="c-btns">了解更多</a> </p>
+        </div>
+        <div class="c-itemM-pic">
+          <img src="static/images/yzj.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="c-itemM c-itemM-deep w-gxxsjk">
+      <div class="c-itemM-in">
+        <div class="c-itemM-pic">
+          <img src="static/images/sjk.png" alt="">
+        </div>
+        <div class="c-itemM-des">
+          <h3>大数据</h3>
+          <p> 大数据平台为用户提供最全面的大数据服务，具体包括hadoop、hdfs、Hbase、Hive、Impala、Spark等。为用户提供最极致的使用体验、最好用的大数据处理分析平台。</p>
+          <p class="c-itemM-btn-bar"> <a href="{{ url_for('bigdata') }}" class="c-btns">了解更多</a> </p>
+        </div>
+      </div>
+    </section>
+    <section class="c-itemM w-jsycc">
+      <div class="c-itemM-in">
+        <div class="c-itemM-des">
+          <h3>云存储</h3>
+          <p> 提供稳定、安全、高效、高可扩展的云存储服务。针对用户上传的数据，至少创建三副本，保证数据的高可用性和可靠性。存储系统支持弹性扩容，让您无需担心存储空间不足。通过优化存储以及根据业务需要增加固态硬盘，且每个节点都是读/写/同步IO，真正做到数据实时一致，从而保障了读写性能不会随着数据量增长而降低。</p>
+          <p class="c-itemM-btn-bar"> <a href="{{ url_for('storage') }}" class="c-btns">了解更多</a> </p>
+        </div>
+        <div class="c-itemM-pic">
+          <img src="static/images/ycc.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="c-itemM c-itemM-deep w-jkyaq">
+      <div class="c-itemM-in">
+        <div class="c-itemM-pic">
+          <img src="static/images/jkaq.png" alt="">
+        </div>
+        <div class="c-itemM-des">
+          <h3>监控与安全</h3>
+          <p> 提供简洁易懂的监控平台，可实时监控您的云主机和服务，并提供多种告警方式（短信，邮件）以保证及时预警，为您的云服务器正常运行保驾护航。通过相关监控软件从多维度、多颗粒对整个平台进行实时监控，简洁易懂的展示界面。提供了云服务器CPU利用率，内存利用率，磁盘利用率以及云数据库，NoSQL 高速存储等各项云服务负载和性能指标，通过直观图表展示出来。监控指标丰富；实时故障告警；自定义告警阈值；多渠道告警发送；灵活的告警通道服务。</p>
+          <p class="c-itemM-btn-bar"> <a href="{{ url_for('monitor') }}" class="c-btns">了解更多</a> </p>
+        </div>
+      </div>
+    </section>
+  </article>
+  <!-- 用户案例 (start) -->
+  <div class="news yhal">    
+    <nav class="c-nav-tab-simple">
+      <a class="blue-bar"></a>
+      <h3>用户案例</h3>
+      <a class="a-more" target="_blank" href="{{ url_for('usercaseMore') }}">+更多</a>
+    </nav>
+    <section class="news-hot clearfix">     
+      <div class="news-hot-part" id="yhal">
+        <div class="change_btn_pre" id="yhal_prev">
+          <span class="prev">上一页</span>
+        </div>
+        <div class="change_btn_next" id="yhal_next">
+          <span class="next">下一页</span>
+        </div>
+        <div class="v_content">
+          <div class="v_content_list">
+            <ul class="clearfix">
+              <li class="right">
+                <ul>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【网络所】</a>
+                      <dd><a href="{{ url_for('usercase') }}" target="_blank" title="VoLTE信令分析与监测系统">VoLTE信令分析与监测系统</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【业务所】</a>
+                      <dd><a href="{{ url_for('usercase_2') }}" target="_blank" title="家庭产品体系规划及产品开发">家庭产品体系规划及产品开发</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【网络所】</a>
+                      <dd><a href="{{ url_for('usercase_3')}}" target="_blank" title="PCC策略运营平台（POP）的开发项目">PCC策略运营平台（POP）的开发项目</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="left">
+                <ul>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【业务所】</a>
+                      <dd><a href="{{ url_for('usercase_4') }}" target="_blank" title="移动电子商务产品规划及相关产品开发-移动支付安全终端研发（2015）">移动电子商务产品规划及相关产品开发-移动支付安全终端研发（2015）</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【测试所】</a>
+                      <dd><a href="{{ url_for('usercase_5') }}" target="_blank" title="基于云平台的MOS测试系统建设">基于云平台的MOS测试系统建设</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【业务所】</a>
+                      <dd><a href="{{ url_for('usercase_6') }}" target="_blank" title="高性能实时视频处理共享平台关键技术研究">高性能实时视频处理共享平台关键技术研究</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="right">
+                <ul>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【大数据】</a>
+                      <dd><a href="" title="DMP项目">DMP项目</a></dd>
+                    </dl>
+                  </li>                    
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【终端所】</a>
+                      <dd><a href="" title="安全测试数据库应用">安全测试数据库应用</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【网络所】</a>
+                      <dd><a href="" title="VoLTE信令分析与监测系统">VoLTE信令分析与监测系统</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="left">
+                <ul>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【业务所】</a>
+                      <dd><a href="" title="家庭产品体系规划及产品开发">家庭产品体系规划及产品开发</a></dd>
+                    </dl>
+                  </li>              
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【网络所】</a>
+                      <dd><a href="" title="PCC策略运营平台（POP）的开发项目">PCC策略运营平台（POP）的开发项目</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="right">
+                <ul>
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【业务所】</a>
+                      <dd><a href="" title="家庭产品体系规划及产品开发">家庭产品体系规划及产品开发</a></dd>
+                    </dl>
+                  </li>              
+                  <li>
+                    <dl>
+                      <a class="blue-color" href="">【网络所】</a>
+                      <dd><a href="" title="PCC策略运营平台（POP）的开发项目">PCC策略运营平台（POP）的开发项目</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- 合作案例 (end) --> 
+  <!-- 最新公告 (start) -->
+  <article class="news">
+    <nav class="c-nav-tab-simple">
+      <a class="blue-bar"></a>
+      <h3>最新公告</h3>
+      <a class="a-more" target="_blank" href="/noticeMore">+更多</a>
+    </nav>
+    <section class="news-hot clearfix">     
+      <div class="news-hot-part" id="zxgg">
+        <div class="change_btn_pre" id="zxgg_prev">
+          <span class="prev">上一页</span>
+        </div>
+        <div class="change_btn_next" id="zxgg_next">
+          <span class="next">下一页</span>
+        </div>
+        <div class="v_content">
+          <div class="v_content_list">
+            <ul class="clearfix">
+              <li class="right">
+                <ul>
+                  <li>
+                    <dl>
+                      <small>2015-11-24</small> 
+                      <dd><a href="/notice_1" target="_blank" title="混合云资源池维护通告">混合云资源池维护通告</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <small>2015-11-23</small>
+                      <dd><a href="/notice_2" target="_blank" title="混合云资源池扩容通告">混合云资源池扩容通告</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <small>2015-11-03</small>
+                      <dd><a href="/notice_3" target="_blank" title="混合云资源池维护结束通告">混合云资源池维护结束通告</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="left">
+                <ul>
+                  <li>
+                    <dl>
+                      <small>2015-10-27</small>
+                      <dd><a href="/notice_4" target="_blank" title="混合云资源池维护通告">混合云资源池维护通告</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <small>2015-10-23</small>
+                      <dd><a href="/notice_5" target="_blank" title="混合云资源池维护通告">混合云资源池维护通告</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <small>2015-09-21</small>
+                      <dd><a href="/notice_6" target="_blank" title="混合云资源池扩容结束通告">混合云资源池扩容结束通告</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+              <li class="right">
+                <ul>
+                  <li>
+                    <dl>
+                      <small>2015-09-13</small>
+                      <dd><a href="/notice_7" target="_blank" title="混合云资源池扩容通告">混合云资源池扩容通告</a></dd>
+                    </dl>
+                  </li>
+                  <li>
+                    <dl>
+                      <small>2015-06-30</small> 
+                      <dd><a href="/notice_8" target="_blank" title="LBS负载均衡新产品上线">LBS负载均衡新产品上线</a></dd>
+                    </dl>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  <!-- 最新公告 (end) -->
+</div>
+<!-- 首页（end） --> 
+<script type="text/javascript" src="static/js/index.js"></script>
+{% endblock%}

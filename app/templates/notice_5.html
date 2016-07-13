@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}<title>最新公告</title>{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/news.css">
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style=""></div>
+{% endblock %} 
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>最新公告</h1>
+  </div>
+  <div class="noticewrapper">
+    <h2 class="notice-title">混合云资源池维护通告</h2>
+    <div class="notice-bd">
+      <p>尊敬的各位领导、同事：</p>
+      <p>&nbsp; &nbsp; &nbsp; &nbsp;大家好！</p>
+      <p>&nbsp; &nbsp; &nbsp; &nbsp;由于测试所需要升级机房QFabric设备，预计在下周末（10月31号/11月1号）需要7个小时左右的网络中断（具体的时间安排需要根据平台业务情况和施工情况来最终确定）期间会影响混合云资源池的业务。为了保证资源池业务的稳定和数据的可靠，需要10月29日下午6点后对资源池所有虚拟机进行关闭。现通知各位接口人，请提前知会使用用户，以免对项目造成不必要的影响。</p>
+      <p>&nbsp; &nbsp; &nbsp; &nbsp;尽量减少本次升级对用户的影响，说明如下：</p>
+      <ul>
+        <li>升级完成后，我们会尽快恢复用户的各个业务系统。</li>
+        <li>在升级前后，大家有问题请及时和我们联系，确保对用户业务的影响最小。</li>
+        <li>如果是重要的业务系统，用户可以考虑提前做一下数据备份。</li>
+      </ul>
+      <p>&nbsp; &nbsp; &nbsp; &nbsp;对本次升级给大家带来的不便深表歉意，感谢您对我们工作的理解和支持。</p>
+      <p class="end">研究院混合云平台项目团队 <br>
+        二〇一五年十月二十三日
+      </p>
+    </div>
+  </div>
+  
+  <h1 class="latest-notice">最近公告</h1>
+  <div class="infowrapper">
+    <ul>
+      <li><span>2015.11.15</span>
+        <a href="#">平台11月20日全网离线割接通知 </a>
+        <a class="newest"></a>
+      </li>
+      <li><span>2015.11.13</span>
+        <a href="#">平台最新全网离线割接通知</a></li>
+      <li><span>2015.10.28</span>
+        <a href="#">平台11月20日全网离线割接通知</a></li>
+      <li><span>2015.11.15</span>
+        <a href="#">方便用户及时关注最新通知</a></li>
+      <li><span>2015.11.13</span>
+        <a href="#">关注公众服务号有惊喜哦~</a></li>
+      <li><span>2015.10.28</span>
+        <a href="#">混合云平台服务正式上线啦！</a></li>
+    </ul>
+  </div>    
+</div>
+{% endblock %}

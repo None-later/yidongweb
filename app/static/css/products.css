@@ -1,0 +1,228 @@
+/*products-cumputer*/
+.m-pro-computer {
+  height: 515px;
+  background: #032151;
+}
+.products-wrap {
+  margin: 0 auto;
+}
+.products-wrap .pro-computer {
+  margin-top: -18px;
+  margin-bottom: 55px;
+}
+.products-wrap .pro-computer h2 {
+  color: #2f2620;
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 80px;
+}
+.products-wrap .pro-computer ul {
+  text-align: center;
+  width: 1140px;
+  padding-left: 20px;
+}
+.products-wrap .pro-computer ul li {
+  float: left;
+  width: 238px;
+  padding-right: 120px;
+  text-align: center;
+  color: #878787;
+  font-size: 14px;
+  line-height: 24px;
+}
+.products-wrap .pro-computer ul li img {
+  margin-bottom: 30px;
+}
+.products-wrap .pro-cpt-box {
+  width: 1000px;
+  overflow: hidden;
+}
+.products-wrap .pro-host {
+  border-top: 1px solid #d3d4d7;
+  padding: 20px 15px;
+  overflow: hidden;
+  display: table;
+}
+.products-wrap .pro-host.computer{
+  height: 300px;
+}
+.products-wrap .pro-host .pro-host-title {
+  font-size: 24px;
+  color: #2f2620;
+  line-height: 60px;
+  font-weight: bold;
+}
+.products-wrap .pro-host .pro-cpt-com {
+  padding: 10px 0px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.products-wrap .pro-host .pro-cpt-com .pro-host-coment {
+  font-size: 16px;
+  color: #2f2620;
+  line-height: 26px;
+  padding: 15px 0 40px;
+  width: 525px;
+  margin-right: 40px;
+}
+.pro-host-pic {
+  display: table-cell;
+  vertical-align: middle;
+  width: 400px;
+}
+.pro-host-pic img{
+  margin-left: 50px;
+}
+.products-wrap .pro-host .pro-host-link {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 40px;
+  color: #d2d2d2;
+  font-size: 14px;
+  text-align: right;
+}
+.products-wrap .pro-host .pro-host-link a {
+  color: #148cec;
+  font-weight: bold;
+}
+.products-wrap .pro-host .pro-cooper-title {
+  color: #333;
+  font-size: 24px;
+  line-height: 30px;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.proc-cooper-coment {
+  font-size: 16px;
+  color: #707070;
+  line-height: 25px;
+  padding: 40px 0 25px;
+}
+/*products-database*/
+.m-pro-database {
+  height: 515px;
+  background: #032151;
+}
+.pro-data-coment {
+  padding: 30px 0 20px;
+  font-size: 16px;
+  color: #2f2620;
+  line-height: 26px;
+  width: 570px;
+}
+.products-wrap .pro-host.bigdata{
+  height: 300px;
+}
+/*products-monitor*/
+.m-pro-monitor {
+  background: #001220;
+}
+.pro-monitor-coment {
+  padding: 30px 0 20px;
+  font-size: 16px;
+  color: #2f2620;
+  line-height: 26px;
+  width: 480px;
+}
+.pro-host-pic img.security-banner {
+  margin-left: 100px;
+}
+/*products-storage*/
+.products-wrap .pro-host.storage{
+  height: 300px;
+}
+.pro-host-pic.storage {
+  width: 480px;
+}
+.m-pro-storage {
+  background: #74c7ec;
+}
+.pro-host-pic img.block-storage {
+  margin-left: 103px;
+}
+
+.apply-btn {
+  color:#fff;
+  background:#373737;
+  border-radius:5px;
+  position: absolute;
+  top: 2px;
+  right: 36px;
+  display: inline-block;
+  font-family: "微软雅黑";
+  font-size: 15px;
+  height: 43px;
+  line-height: 43px;
+  text-align: center;
+  width: 140px;
+  border-radius: 6px;
+}
+.apply-btn:hover {
+  background: #232323;
+  color: #fff;
+  text-decoration:none;
+}
+
+.pro-computer .top_bar{
+  margin-bottom: 54px;
+}
+.pro-computer .top_bar h1{
+  margin-left: 16px;
+}
+
+.pro-cpt-box .title{
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "微软雅黑";
+  margin-bottom: 10px;
+}
+.pro-cpt-box .title.s1{
+  color: #efae00;
+}
+.pro-cpt-box .title.s2{
+  color: #30bd18;
+}
+.pro-cpt-box .title.s3{
+  color: #0089ef;
+}
+.pro-cpt-box .dep{
+  font-size: 15px;
+  color: #323232;
+  font-family: "Microsoft Yahei","微软雅黑",Tahoma,Helvetica,Arial,sans-serif;
+}
+
+
+.pro-cpt-box .title.c1{
+  color: #8dc90d;
+}
+.pro-cpt-box .title.c2{
+  color: #3ebff4;
+}
+.pro-cpt-box .title.c3{
+  color: #ff657b;
+}
+
+.pro-cpt-box .title.m1{
+  color: #4bc90d;
+}
+.pro-cpt-box .title.m2{
+  color: #f4ba3e;
+}
+.pro-cpt-box .title.m3{
+  color: #6699ff;
+}
+
+.pro-cpt-box .title.b1{
+  color: #efae00;
+}
+.pro-cpt-box .title.b2{
+  color: #c445df;
+}
+.pro-cpt-box .title.b3{
+  color: #ef6b00;
+}

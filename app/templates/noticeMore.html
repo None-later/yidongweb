@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}全部公告{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/news.css">
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style=""></div>
+{% endblock %} 
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>全部公告</h1>
+  </div>
+  <div class="infowrapper">
+      <div class="newslist">
+        <ol>
+          <li><a href="#">平台11月20日全网离线割接通知</a>
+            <span class="date">发布时间：2016-03-03 08:10:01</span>
+          </li>
+          <li><a href="#">平台最新全网离线割接通知</a>
+            <span class="date">发布时间：2016-03-03 06:26:02</span>
+          </li>
+          <li><a href="#">平台11月20日全网离线割接通知</a>
+            <span class="date">发布时间：2016-03-02 09:34:34</span>
+          </li>
+          <li><a href="#">方便用户及时关注最新通知</a>
+            <span class="date">发布时间：2016-02-29 10:25:43</span>
+          </li>
+          <li><a href="#">关注公众服务号有惊喜哦~</a>
+            <span class="date">发布时间：2016-02-18 10:19:36</span>
+          </li>
+          <li><a href="#">混合云平台服务正式上线啦！</a>
+            <span class="date">发布时间：2016-02-04 06:40:26</span>
+          </li>
+          <li><a href="#">混合云资源池维护通告</a>
+            <span class="date">发布时间：2016-02-03 03:40:08</span>
+          </li>
+          <li><a href="#">混合云资源池扩容通告</a>
+            <span class="date">发布时间：2016-02-03 03:39:05</span>
+          </li>
+          <li><a href="#">混合云资源池维护结束通告</a>
+            <span class="date">发布时间：2016-01-29 08:40:12</span>
+          </li>
+          <li><a href="#">混合云资源池扩容结束通告</a>
+            <span class="date">发布时间：2016-01-27 08:30:04</span>
+          </li>
+        </ol>
+      </div>
+      <div class="pages">
+        <ol>
+          <li class="active">1</li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li class="btn-next"><a href="#">下一页</a></li>
+        </ol>
+        <strong>当前第1页 共4页</strong>
+      </div>
+  </div>    
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}监控安全{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/products.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/jquery.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 116px;"></div>
+{% endblock %} 
+
+{% block body %}
+<!-- BEGIN products_monitor-wrap-->
+<div class="m-banner-box">
+  <a></a>
+</div>
+<article class="products-wrap w1000">
+  <nav class="c-nav-tab-btns m-tab-mar">
+    <p> <a href="/computer">弹性计算</a> <a href="/bigdata">大数据</a> <a href="/storage">云存储</a> <a class="active" href="/monitor">监控安全</a> </p>
+  </nav>
+  <section class="pro-computer">
+    <div class="top_bar">
+      <h1>云监控与云安全</h1>
+      <a class="apply-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+    </div>
+    <div class="pro-cpt-box">
+      <ul class="clearfix">
+        <li> <img src="static/images/monitor_s1.png" alt="">
+          <p class="title m1">安全可靠</p>
+          <p class="dep">安全加固与访问控制</p>
+        </li>
+        <li> <img src="static/images/monitor_s2.png" alt="">
+          <p class="title m2">简洁易懂</p>
+          <p class="dep">提供简洁监控界面</p>
+        </li>
+        <li> <img src="static/images/monitor_s3.png" alt="">
+          <p class="title m3">多维度</p>
+          <p class="dep">提供多颗粒监控预警</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="pro-host"> <a name="yjk"></a>
+    <div class="pro-host-pic">
+      <img src="static/images/monitor_b1.png" alt="">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">监控</h2>
+      <p class="pro-host-coment">通过相关监控软件从多维度、多颗粒对整个平台进行实时监控，简洁易懂的展示界面。提供了云服务器CPU利用率，内存利用率，磁盘利用率以及云数据库，NoSQL 高速存储等各项云服务负载和性能指标，通过直观图表展示出来。监控指标丰富；实时故障告警；自定义告警阈值；多渠道告警发送；灵活的告警通道服务。</p>
+    </div>
+  </section>
+  <section class="pro-host"> <a name="yaq"></a>
+    <div class="pro-host-pic">
+      <img src="static/images/monitor_b2.png" alt="" class="security-banner">
+    </div>
+    <div class="pro-cpt-com">
+      <h2 class="pro-host-title">安全</h2>
+      <p class="pro-host-coment">通过相关安全策略对平台的访问进行安全控制，对服务器进行安全加固，从而保证平台安全可靠。</p>
+    </div>
+  </section>
+</article>
+<!-- END products_computer-wrap -->
+{% endblock%}

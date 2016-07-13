@@ -1,0 +1,788 @@
+{% extends "base.html" %}
+
+{% block title %}资源展示{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="static/js/resource/highcharts.js"></script>
+    <script type="text/javascript" src="static/js/resource/exporting.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 268px;"></div>
+{% endblock %}
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>资源使用情况</h1>
+    <a class="app-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+  </div>
+  <div class="resourcewrapper">
+    <div class="chart_wrp" id="total">
+      <div class="chart_tab total">
+        <h2>总体情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两月</li>
+          <li>上六月</li>
+          <li>上年</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="total_current">
+        <div class="tab_category">
+          <span class="cur">项目</span>
+          <span>部所</span>
+        </div>
+{#          总体调用情况css#}
+        <div class="bar_chart cur">
+          <div id="project" style="width: 800px; height: {{len_project_name*35}}px; margin: 0 auto;"></div>
+        </div>
+        <div class="bar_chart">
+          <div id="department" style="width: 620px; height: {{ len_dept_name*35}}; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两月</div>
+      <div class="chart_bd">上六月</div>
+      <div class="chart_bd">上年</div>
+    </div>
+
+    <div class="chart_wrp" id="apply">
+      <div class="chart_tab">
+        <h2>资源调用情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>过去14天</li>
+          <li>上月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="apply_current">
+        <div class="tab_category">
+          <label>云计算</label>
+          <span class="cur">虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <label class="bigdata">大数据</label>
+          <span>虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <a class="more-btn" href="http://192.168.57.206/zabbix/dashboard.php" target="_blank">更多</a>
+        </div>
+        <div class="area_chart cur"><!-- <a class="cloud_virtual"></a> -->
+          <div id="cloudVirtual" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><!-- <a class="cloud_physical"></a> -->
+          <div id="cloudPhysical" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><a class="cloud_storage"></a></div>
+        <div class="area_chart"><a class="bigdata_virtual"></a></div>
+        <div class="area_chart"><a class="bigdata_physical"></a></div>
+        <div class="area_chart"><a class="bigdata_storage"></a></div>
+      </div>
+      <div class="chart_bd">过去14天</div>
+      <div class="chart_bd">上月</div>
+      <div class="chart_bd">上两月</div>
+    </div>
+
+    <div class="chart_wrp" id="malfunction">
+      <div class="chart_tab">
+        <h2>故障情况统计</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="malfunction_current">
+        <div class="line_chart"><!-- <a></a> -->
+          <div id="failure" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两周</div>
+      <div class="chart_bd">上一月</div>
+      <div class="chart_bd">上两月</div>
+    </div>
+
+    <div class="chart_wrp" id="application">
+      <div class="chart_tab">
+        <h2>项目资源使用情况详表</h2>
+        <ul>
+          <li class="select">上一周</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="table_bd select" id="application_current">
+        <table>
+          <tr>
+            <th>项目名称</th>
+            <th>运行时长</th>
+            <th>运行环境</th>
+            <th>机器数目</th>
+            <th>月均平均时长</th>
+            <th>外部IP数</th>
+            <th>固定IP数</th>
+            <th>故障率</th>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table_bd">上两周</div>
+      <div class="table_bd">上一月</div>
+      <div class="table_bd">上两月</div>
+      <div class="page_bar">
+        <span id="currentPage">Page &nbsp;</span>
+        <input type="text" id="pageNum" onkeyup="check_pagenum(this);" />
+        &nbsp;of&nbsp;<span class="total_page" id="totalPage">12</span>
+        <span class="page_jump">
+          <a class="cur">上一页</a>
+          <a>下一页</a>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <script type="text/javascript">
+  var oItem = document.getElementById("total");
+  var oLis = oItem.getElementsByTagName("li");
+  var oDivs = oItem.getElementsByClassName("chart_bd");
+
+  function changeTab(nIndex) {
+      for (var i = 0; i < oLis.length; i++) {
+          oLis[i].className = null;
+          oDivs[i].className = "chart_bd";
+      }
+      oLis[nIndex].className = "select";
+      oDivs[nIndex].className = "chart_bd select";
+  }
+
+  for (var i = 0; i < oLis.length; i++) {
+      ~function (i) {
+          oLis[i].onclick = function () {
+              changeTab(i);
+          }
+      }(i);
+  }
+
+
+  var oTab = document.getElementById("total_current");
+  var oBtns = oTab.getElementsByTagName("span");
+  var oChts = oTab.getElementsByClassName("bar_chart");
+
+  function changeChart(nIndex) {
+      for (var j = 0; j < oBtns.length; j++) {
+          oBtns[j].className = null;
+          oChts[j].className = "bar_chart";
+      }
+      oBtns[nIndex].className = "cur";
+      oChts[nIndex].className = "bar_chart cur";
+      updateChart(oChts[nIndex].firstElementChild.id);
+  }
+
+  for (var j = 0; j < oBtns.length; j++) {
+      ~function (j) {
+          oBtns[j].onclick = function () {
+              changeChart(j);
+          }
+      }(j);
+  }
+
+  var oTabApply = document.getElementById("apply_current");
+  var oBtnsApply = oTabApply.getElementsByTagName("span");
+  var oChtsApply = oTabApply.getElementsByClassName("area_chart");
+
+  function changeAreaChart(nIndex) {
+      for (var j = 0; j < oBtnsApply.length; j++) {
+          oBtnsApply[j].className = null;
+          oChtsApply[j].className = "area_chart";
+      }
+      oBtnsApply[nIndex].className = "cur";
+      oChtsApply[nIndex].className = "area_chart cur";
+      updateChart(oChtsApply[nIndex].firstElementChild.id);
+  }
+
+  for (var j = 0; j < oBtnsApply.length; j++) {
+      ~function (j) {
+          oBtnsApply[j].onclick = function () {
+              changeAreaChart(j);
+          }
+      }(j);
+  }
+
+  //切换标签时更换图表
+  function updateChart(id) {
+    if (id == 'department') {
+      $('#' + id).highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: {{ dept_name|safe }},//所有部所的名字
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '部所名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '项目数<br/>(个)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+            }
+        },
+        tooltip: {
+            pointFormat: '{point.y}'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: {{ dept_pnum|safe }},//每个部所对应的项目个数
+            color: '#5bbf00'
+        }]
+    });
+  }
+  else if (id == 'project') {
+    $('#' + id).highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: {{ project_name|safe }},
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '项目名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '运行总时长<br/>(天数)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            tickInterval: 50,   //坐标轴上的刻度线的单位间隔
+            gridLineWidth: 1,
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+                step: 2   //轴标签显示间隔数
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}h'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true   //显示点值
+                }
+            }
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+           credits: {
+            enabled: false
+        },
+        series: [{
+
+            data: {{ all_days|safe }},//传递每个项目的天数
+            color: '#5bbf00'
+        }]
+    });
+  }
+  else if (id == 'cloudPhysical') {
+      $('#' + id).highcharts({
+        chart: {
+            type: 'area',
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories:{{ virtual_datetime|safe }},
+            lineColor: '#999',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            tickLength: 1,    //坐标轴刻度宽度为0
+            tickInterval: 1//30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            gridLineWidth: 1,
+            tickInterval: {{ max_machineNum|safe }},
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+            fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            valueSuffix: ' 台',
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: 15,
+            y: 100
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name:'虚拟机',
+            data:{{ virtual_machinenum|safe}},
+            color: '#5bbf00'
+        },{
+            name:'物理机',
+            data: [30, 60, 80, 90, 100, 120, 150, 170, 180, 200],
+            color: '#1d9fff'
+        }]
+    });
+  }
+  else{
+    $('#' + id).highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: {{ virtual_datetime|safe }},
+            lineColor: '#999',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            tickLength: 1,    //坐标轴刻度宽度为0
+            tickInterval: 1//30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            gridLineWidth: 1,
+            tickInterval: {{ max_machineNum|safe }},
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}台'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name:'虚拟机',
+            data:{{ virtual_machinenum|safe}},
+            color: '#5bbf00'
+        }]
+    });
+  }
+}
+
+$(function () {
+    $('#project').highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: {{ project_name|safe }},//传递项目名
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '项目名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '运行总时长<br/>(天数)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            tickInterval: 50,   //坐标轴上的刻度线的单位间隔
+            gridLineWidth: 1,
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+                step: 2   //轴标签显示间隔数
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}h'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true   //显示点值
+                }
+            }
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: {{ all_days|safe}},//传递每个项目的天数
+            color: '#5bbf00'
+        }]
+    });
+
+
+    $('#cloudVirtual').highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+         xAxis: {
+            categories: {{ virtual_datetime|safe }},
+            lineColor: '#999',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            tickLength: 1,    //坐标轴刻度宽度为0
+            tickInterval: 1//30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            gridLineWidth: 1,
+            tickInterval: {{ max_machineNum|safe }},
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}台'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name:'虚拟机',
+            data:{{ virtual_machinenum|safe}},
+            color: '#5bbf00'
+        }]
+    });
+
+
+
+    $('#failure').highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            type: 'datetime',
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,
+            tickLength: 0,    //坐标轴刻度宽度为0
+            tickInterval: 30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '故障数',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            gridLineWidth: 1,
+            tickInterval: 2,
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            pointFormat: '{point.y}'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            type: 'area',
+            data: [2, 4, 5, 6, 8, 9, 11, 14, 15, 18, 21, 25],
+            color: '#ff3434',
+            pointStart: Date.UTC(2015, 0, 1),
+            pointIntervalUnit: 'month'
+        }]
+    });
+
+});
+
+    </script>
+{% endblock%}
+
+

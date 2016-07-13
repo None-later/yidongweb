@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}案例详情{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/case.css">
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 268px;"></div>
+{% endblock %} 
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>用户案例</h1>
+    <a class="app-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+  </div>
+  <div class="casewrapper">
+    <div class="title_bar">
+      <h2 class="case-title">Volte项目（网络所）</h2>
+      <span>2015.08-2015.12</span>
+    </div>
+    <p>&nbsp; &nbsp; &nbsp; &nbsp;实现VoLTE网络中的信令查询、指标分析和异常分析等功能（特点：大数据量、结构化数据、需要实时查询、全字段查询、数据极少更新）（100w用户每天200G左右数据,后面按前期测试数据极少来估计）。</p>
+    <div class="table_bd">
+      <table class="project">
+        <tr>
+          <th>运行时长</th>
+          <th>运行环境</th>
+          <th>机器数目</th>
+          <th>月活平均时长</th>
+          <th>外部IP数</th>
+          <th>固定IP数</th>
+          <th>故障率</th>
+        </tr>
+        <tr>
+          <td>204小时</td>
+          <td>Linux Centos7</td>
+          <td>4</td>
+          <td>15小时</td>
+          <td>2</td>
+          <td>3</td>
+          <td>0.24%</td>
+        </tr>
+      </table>
+    </div>
+    <div class="case_chart"><a></a></div>
+    <div class="table_bd">
+      <h3 class="resource_text">资源列表</h3>
+      <table class="resource">
+        <tr>
+          <th>类型</th>
+          <th>月增数据量</th>
+          <th>数目</th>
+          <th>申请时长</th>
+          <th>套餐</th>
+        </tr>
+        <tr>
+          <td>HDFS</td>
+          <td>10 G/天</td>
+          <td>2</td>
+          <td>2个月</td>
+          <td>10G*60，24核物理机4台，内存32G</td>
+        </tr>
+        <tr>
+          <td>Hive</td>
+          <td>10 G/天</td>
+          <td>2</td>
+          <td>2个月</td>
+          <td>10G*60，24核物理机4台，内存32G</td>
+        </tr>
+        <tr>
+          <td>HBase</td>
+          <td>10 G/天</td>
+          <td>2</td>
+          <td>2个月</td>
+          <td>10G*60，24核物理机4台，内存32G</td>
+        </tr>
+      </table>
+    </div>
+  </div>   
+</div>
+<script type="text/javascript" src="static/js/usercase_chart.js"></script>
+{% endblock %}

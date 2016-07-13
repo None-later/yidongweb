@@ -1,0 +1,48 @@
+{% extends  "base.html" %}
+{% block css %}
+<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="static/css/reset.css">
+<link rel="stylesheet" href="static/css/common.css">
+<link rel="stylesheet" href="static/css/login.css">
+{% endblock %}
+
+{% block title %} 用户登录{% endblock %}
+
+{% block script %}
+<script src="js/jquery.js"></script>
+<script src="js/additional-methods.js"></script>
+<script src="js/login.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="m-login">
+        <div class="login-wrap w1000">
+            <section class="login-wbanner"><img src="static/images/pic_370x124.png"></section>
+            <section class="login-box">
+                {% if error %}
+                <p class="error"/> <strong>Error:</strong>{{ error }}
+                {% endif %}
+                <form novalidate id="login_form" action="/login" method="post">
+
+                    <h1 class="login-title">资源池账号登录</h1>
+                    <h4>登录名：</h4>
+                    <input id="login_email" class="c-input login-input" name="username" placeholder="登录名" type="text">
+                    <h4>登录密码：</h4>
+                    <input class="c-input login-input" name="password" placeholder="登录密码" type="password">
+                    <input name="callback" value="http://www.ksyun.com" type="hidden">
+                    <div class="clearfix imgcode-pos" style="display:none">
+                        <label class="reg-title">图片验证码：</label>
+                        <label class="imgCode-box">
+                            <input id="img-input" class="c-input regitster-inw2" placeholder="图片验证码" name="imgCode"
+                                   type="text">
+                            <div class="clearfix">
+                            </div>
+                        </label>
+                        <span class="img-code"> <img class="login-yz" src="static/images/imgCode.jpg"> </span>
+                    </div>
+                    <button class="c-btn login-btn" type="submit">登录</button>
+                </form>
+            </section>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}文档中心{% endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="static/js/docs/jquery.js"></script>
+<script type="text/javascript" src="static/js/docs/underscore.js"></script>
+<script type="text/javascript" src="static/js/docs/doctools.js"></script>
+<script type="text/javascript" src="static/js/docs/translations.js"></script>
+{% endblock %}
+
+{% block div_head %}
+    <div class="border-sty" style="width: 152px; left: 420px;"></div>
+{% endblock %} 
+
+{% block body %}
+<div class="document">
+  <div class="top_bar">
+    <h1>文档中心</h1>
+    <span class="input_box">
+      <a class="frm_input_append" onclick="" href="javascript:void(0);">
+        <i class="search_icon"></i>
+      </a>
+      <input class="text" type="text" id="search" name="search" onfocus="if (value =='请输入关键词'){value =''}" onblur="if (value ==''){value ='请输入关键词'}" value="请输入关键词" />
+    </span>
+  </div>
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+        <div class="section" id="qingcloud">
+          <h1>使用文档</h1>
+          <p>欢迎阅读 资源池 学习文档，我们尽可能以清晰简明的图文，介绍资源池的使用流程。</p>
+          <p>资源使用和管理流程包括资源申请、资源维护、故障处理和资源回收等四个子流程。<br>
+            <span>用户申请资源的JIRA平台地址：<a target="_blank" href="http://jira.cmri.cn/browse/RDCLOUD">http://jira.cmri.cn/browse/RDCLOUD</a></span>
+          </p>
+          <p>如果使用过程中遇到困惑或问题，建议先查看下 <a class="reference internal" href="/faq"><em>FAQ</em></a> ，
+            我们会不断收集整理用户提出的问题，并编入 FAQ 。</p>
+          <div class="section" id="id2">
+            <h2>计算和存储资源申请和使用原则</h2>
+            <div class="toctree-wrapper compound">
+              <ul>
+                <li class="toctree-l1">私有云计算、存储资源申请
+                  <ul>
+                    <li class="toctree-l2">目前该平台主要支持研发测试环境，提供5*8小时服务，由于博瑞琪出口带宽有限，也不允许大流量的外网访问测试。</li>
+                    <li class="toctree-l2">平台在分配出去的物理机、虚拟机上部署agent进行监控管理。</li>
+                    <li class="toctree-l2">由于平台运维人员有限，目前平台级的问题由资源池运维人员处理，操作系统层面和应用软件方面的问题，比如服务配置、软件安装等由用户负责。</li>
+                    <li class="toctree-l2">当平台出现问题，影响到研发测试业务时，管理员会向用户发出通知并进行沟通，需要用户配合平台运维人员进行问题处理。</li>
+                    <li class="toctree-l2">各统一接口人向平台进行资源申请</li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1">公有云资源申请
+                  <ul>
+                    <li class="toctree-l2">目前对于要求7*24小时服务或者对现网的公网服务业务，建议申请公有云资源进行部署</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="section" id="faq">
+            <h2>组件使用授权及使用方式</h2>
+            <div class="toctree-wrapper compound">
+                <ul>
+                  <li class="toctree-l1">应用方基本要求
+                    <ul>
+                      <li class="toctree-l2">为了方便管理，各部所统一一个接口人。</li>
+                      <li class="toctree-l2">组件的使用者应具备使用组件的能力。</li>
+                      <li class="toctree-l2">按组件申请格式申请所需资源。</li>
+                      <p class="example">举例：如果申请了hive资源，需要至少具备建表、分区、数据映射等能力。</br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果申请了hdfs资源，需要至少具备数据的加载，建目录等能力。</p>
+                    </ul>
+                  </li>
+                  <li class="toctree-l1">大数据平台授权
+                    <ul>
+                      <li class="toctree-l2">为应用方提供一个接口机器。</li>
+                      <li class="toctree-l2">按所名-项目名的方式创建磁盘资源。</li>
+                      <li class="toctree-l2">按所名-项目名的方式创建计算资源。</li>
+                      <li class="toctree-l2">在接口机上创建用户并赋予用户对磁盘和计算资源的访问。</li>
+                    </ul>
+                  </li>
+                  <li class="toctree-l1">应用方使用资源
+                    <ul>
+                      <li class="toctree-l2">登陆到接口机。</li>
+                      <li class="toctree-l2">使用分配给自己的组件。</li>
+                      <p class="example" style="color: #d14;">注意：应用方的任何操作都有稽核，请不要操作除本身数据以外的数据。
+                     </p>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+      <h3><a href="#">內容目录</a></h3>
+      <ul class="current">
+        <b class="current_b"></b>
+        <li class="toctree-l1 current"><a class="current reference internal" href="javascript:void(0);">使用文档</a></li>
+      </ul>
+      <ul>
+        <li class="toctree-l1"><a class="reference internal" href="/faq">常见问题</a></li>
+      </ul>
+      <ul>
+        <li class="toctree-l1 query"><span class="reference internal query">服务咨询</span>
+          <p>电话<span>010-52686688</span></p>
+          <p>QQ<span class="qq">27502000</span></p>
+          <p>飞信<span>99433222</span></p>
+        </li>
+      </ul>
+      <script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div> 
+  <div class="clearer">
+  </div>
+</div>
+
+<script type="text/javascript" src="static/js/docs/docs.js"></script>
+{% endblock %}

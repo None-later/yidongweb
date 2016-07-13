@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+<title>资源展示</title>
+<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="static/css/reset.css">
+<link rel="stylesheet" href="static/css/common.css">
+<link rel="stylesheet" href="static/css/products.css">
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/jquery.spinner.css" />
+<!-- <link rel="stylesheet" href="css/docs/pygments.css" type="text/css"> -->
+<!--script type="text/javascript" src="js/jquery-1.js"></script> 
+<script type="text/javascript" src="js/jquery_002.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/jquery.js"></script-->
+<script type="text/javascript" src="static/js/docs/jquery.js"></script>
+<script type="text/javascript" src="static/js/resource/highcharts.js"></script>
+<script type="text/javascript" src="static/js/resource/exporting.js"></script>
+<script type="text/javascript" src="static/js/resource/jquery.spinner.js"></script>
+<script type="text/javascript" src="static/js/docs/jquery.simplemodal.1.4.3.min.js"></script>
+<style type="text/css">
+/*弹出窗口样式*/
+.dialog_hd {
+    background-color: #e7e7e7;
+    background-image: linear-gradient(to bottom, #f2f2f2 0px, #e0e0e0 100%);
+    border-bottom: 1px solid #c2c2c2;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 20px;
+    position: relative;
+}
+.dialog_hd h3 {
+    color: #222;
+		margin: 0;
+}
+.dialog_bd {
+	padding: 20px 0 40px;
+}
+.failure_item { 
+	margin-bottom: 10px; 
+	overflow:hidden;
+}
+.failure_item label {
+    display: inline-block;
+    margin-top: 15px;
+    vertical-align: middle;
+}
+.fill-title {
+    color: #636363;
+    float: left;
+    font-size: 14px;
+    line-height: 36px;
+    padding-right: 10px;
+    text-align: right;
+    width: 140px;
+}
+.dialog_hd .query_closed {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.date-sel {
+    width: 130px;
+}
+.amount {
+	background-color: transparent;
+	border: 0 none;
+	outline: 0 none;
+}
+</style>
+</head>
+<body class="docs">
+<!-- BEGIN header-->
+<!-- begin menu-->
+<header class="m-header-nav line clearfix nav-fixed2">
+  <section class="head-nav-main w1000"> <a href="http://rdcloud.cmri.cn/" class="head-logo"><img src="images/logo.png" title="资源池"></a>
+    <nav class="head-nav">
+      <ul>
+        <li><a href="index.html" class="link">首页</a></li>
+        <li><a href="computer.html" class="link">产品服务</a></li>
+        <li><a href="resource.html" class="link cur">资源展示</a></li>
+        <li><a href="docs.html" class="link">文档中心</a></li>
+        <li><a href="http://192.168.57.205:8080/jforum/" target="_blank" class="link">技术论坛</a></li>
+      </ul>
+      <div class="border-sty" style="width: 152px; left: 268px;">
+      </div>
+    </nav>
+  </section>
+</header>
+<!-- end menu--> 
+<!-- END header-->
+<div class="document">
+  <div class="top_bar">
+    <h1>资源使用情况</h1>
+    <a class="app-btn" href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">立即申请</a>
+  </div>
+  <div class="resourcewrapper">
+    <div class="chart_wrp" id="total">
+      <div class="chart_tab total">
+        <h2>总体情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两月</li>
+          <li>上六月</li>
+          <li>上年</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="total_current">
+        <div class="tab_category">
+          <span class="cur">项目</span>
+          <span>部所</span>
+        </div>
+        <div class="bar_chart cur"><!-- <a class="project"></a> -->
+          <div id="project" style="width: 620px; height: 420px; margin: 0 auto;"></div>
+        </div>
+        <div class="bar_chart"><!-- <a class="department"></a> -->
+          <div id="department" style="width: 620px; height: 420px; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两月</div>
+      <div class="chart_bd">上六月</div> 
+      <div class="chart_bd">上年</div>  
+    </div>
+
+    <div class="chart_wrp" id="apply">
+      <div class="chart_tab">
+        <h2>资源调用情况</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>过去14天</li>
+          <li>上月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="chart_bd select" id="apply_current">
+        <div class="tab_category">
+          <label>云计算</label>
+          <span class="cur">虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <label class="bigdata">大数据</label>
+          <span>虚拟机</span>
+          <span>物理机</span>
+          <span>存储</span>
+          <a class="more-btn" href="http://192.168.57.206/zabbix/dashboard.php" target="_blank">更多</a>
+        </div>
+        <div class="area_chart cur"><!-- <a class="cloud_virtual"></a> -->
+          <div id="cloudVirtual" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><!-- <a class="cloud_physical"></a> -->
+          <div id="cloudPhysical" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+        <div class="area_chart"><a class="cloud_storage"></a></div>
+        <div class="area_chart"><a class="bigdata_virtual"></a></div>
+        <div class="area_chart"><a class="bigdata_physical"></a></div>
+        <div class="area_chart"><a class="bigdata_storage"></a></div>
+      </div>
+      <div class="chart_bd">过去14天</div>
+      <div class="chart_bd">上月</div> 
+      <div class="chart_bd">上两月</div>  
+    </div>
+
+    <div class="chart_wrp" id="malfunction">
+      <div class="chart_tab">
+        <h2>故障情况统计</h2>
+        <ul>
+          <li class="select">默认</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="tab_category">
+        <a class="more-btn" id="fill" href="javascript:void(0);">录入</a>
+      </div>
+      <div class="chart_bd select" id="malfunction_current">
+        <div class="line_chart"><!-- <a></a> -->
+          <div id="failure" style="height: 330px; width: 830px; margin: 0 auto;"></div>
+        </div>
+      </div>
+      <div class="chart_bd">上两周</div>
+      <div class="chart_bd">上一月</div> 
+      <div class="chart_bd">上两月</div>  
+    </div>
+
+    <div class="chart_wrp" id="application">
+      <div class="chart_tab">
+        <h2>项目资源使用情况详表</h2>
+        <ul>
+          <li class="select">上一周</li>
+          <li>上两周</li>
+          <li>上一月</li>
+          <li>上两月</li>
+        </ul>
+      </div>
+      <div class="table_bd select" id="application_current">
+        <table>
+          <tr>
+            <th>项目名称</th>
+            <th>运行时长</th>
+            <th>运行环境</th>
+            <th>机器数目</th>
+            <th>月均平均时长</th>
+            <th>外部IP数</th>
+            <th>固定IP数</th>
+            <th>故障率</th>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+          <tr>
+            <td>DMP</td>
+            <td>204h</td>
+            <td>Linux Centos7</td>
+            <td>4</td>
+            <td>15h</td>
+            <td>2</td>
+            <td>3</td>
+            <td>0.24%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table_bd">上两周</div>
+      <div class="table_bd">上一月</div> 
+      <div class="table_bd">上两月</div>
+      <div class="page_bar">
+        <span id="currentPage">Page &nbsp;</span> 
+        <input type="text" id="pageNum" onkeyup="check_pagenum(this);" />
+        &nbsp;of&nbsp;<span class="total_page" id="totalPage">12</span>
+        <span class="page_jump">
+          <a class="cur">上一页</a>
+          <a>下一页</a>
+        </span>
+        <!-- <a id="first" onclick="first_page()" href="javascript:void(0)">首页</a>    
+        <a id="prev" onclick="up_page()" href="javascript:void(0)">上一页</a>
+        <a id="next" onclick="down_page()" href="javascript:void(0)">下一页</a>
+        <a id="last" onclick="last_page()" href="javascript:void(0)">末页</a> -->
+      </div>  
+    </div>
+
+  </div>   
+</div>
+
+
+<!-- BEGIN footer-->
+<footer class="m-footer">
+  <article class="m-footer-link w1000">
+    <div class="footer-wrap">
+    <section style="">
+      <h4>产品服务</h4>
+      <ul>
+        <li><a href="computer.html">弹性计算</a></li>
+        <li><a href="bigdata.html">大数据</a></li>
+      </ul>
+    </section>
+    <section>
+      <h4>资源管理</h4>
+      <ul>
+        <li><a href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">资源申请</a></li>
+        <li><a href="resource.html">资源展示</a></li>
+      </ul>
+    </section>
+    <section>
+      <h4>用户案例</h4>
+      <ul>
+        <li><a href="">云计算类</a></li>
+        <li><a href="">大数据类</a></li>
+      </ul>
+    </section>
+    <section>
+      <h4>文档中心</h4>
+      <ul>
+        <li><a href="">用户指南</a></li>
+        <li><a href="">常见问题</a></li>
+      </ul> 
+       </section>
+    <section style="width: 15%;">
+      <h4>技术论坛</h4>
+      <ul>
+        <li><a href="http://192.168.57.205:8080/jforum/" target="_blank">大数据论坛</a></li>
+        <li><a href="http://192.168.57.205:8080/jforum/" target="_blank">云计算论坛</a></li>
+      </ul>
+    </section>
+    <section style="padding-left: 11px;">
+      <h4>关于我们</h4>
+      <ul>
+        <li><a href="" target="_blank">开发团队</a></li>
+        <li><a href="history.html">运维团队</a></li>
+      </ul>
+    </section>
+    </div>
+  </article>
+  <article class="m-footer-record clearfix">
+    <section class="record-main w1000">
+      <label>        Copyright © 2015 中国移动研究院 大数据与IT技术研究所     </label>
+      <!--a class="lnk-djbh" href="http://www.djbh.net/"><img src="images/999f934e.png"></a> <a class="lnk-dca" href="http://www.dca.org.cn/"><img src="images/8abdb791.png"></a--> </section>
+  </article>
+</footer>
+<div class="popup popup-browser">
+  <div class="popup-in">
+    <div class="popup-cont">
+      <p><img src="images/660d0968.jpg" alt=""></p>
+      <a class="btn-link-close" href="#"></a> <a class="btn-link-download" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"></a>
+    </div>
+  </div>
+  <div class="popup-bg">
+  </div>
+</div>
+<!-- END footer-->
+<div class="c-backTop">
+  <span class="c-backTop-btn"></span>
+</div>
+
+<!-- BEGIN 弹窗HTML -->
+<div class="dialog_wrp" style="display: none;">
+   <div class="dialog_hd">
+      <h3>故障信息</h3>
+      <a class="query_closed" href="javascript:void(0);" onClick="$.modal.close();"></a>
+    </div>
+    <div class="dialog_bd">
+      <div class="failure_item">    
+        <label class="fill-title">统计年月：</label>
+        <label> 
+          <select class="c-select date-sel" name="year" id="year">
+            <option value="0" selected="selected">--请选择年份--</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+          </select>
+          <span>年</span>
+          <select class="c-select date-sel" name="month" id="month">
+            <option value="0" selected="selected">--请选择月份--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option> 
+          </select>
+          <span>月</span>
+        </label>
+      </div>
+      <div class="failure_item">
+        <label class="fill-title">当前故障数：</label>
+        <label><input class="c-input amount" id="current" name="current" value="8" readonly /></label>
+      </div>
+      <div class="failure_item">
+        <label class="fill-title">修改故障数：</label>
+        <label><input type="text" id="modify" name="modify" class="spinnerExample"/></label>
+      </div>
+    </div>
+    <div class="dialog_ft">
+      <a class="canBtn" href="javascript:void(0);" onClick="$.modal.close();">取 消</a>
+      <a id="submit" class="subBtn" href="javascript:void(0);">提 交</a>      
+    </div>
+</div>
+<!-- END 弹窗HTML -->
+
+<script type="text/javascript">
+  var oItem = document.getElementById("total");
+  var oLis = oItem.getElementsByTagName("li");
+  var oDivs = oItem.getElementsByClassName("chart_bd");
+
+  function changeTab(nIndex) {
+      for (var i = 0; i < oLis.length; i++) {
+          oLis[i].className = null;
+          oDivs[i].className = "chart_bd";
+      }
+      oLis[nIndex].className = "select";
+      oDivs[nIndex].className = "chart_bd select";
+  }
+
+  for (var i = 0; i < oLis.length; i++) {
+      ~function (i) {
+          oLis[i].onclick = function () {
+              changeTab(i);
+          }
+      }(i);
+  }
+
+
+  var oTab = document.getElementById("total_current");
+  var oBtns = oTab.getElementsByTagName("span");
+  var oChts = oTab.getElementsByClassName("bar_chart");
+  //var oCharts = oChts.firstChild.id;
+
+  function changeChart(nIndex) {
+      for (var j = 0; j < oBtns.length; j++) {
+          oBtns[j].className = null;
+          oChts[j].className = "bar_chart";
+      }
+      oBtns[nIndex].className = "cur";
+      oChts[nIndex].className = "bar_chart cur";
+      updateChart(oChts[nIndex].firstElementChild.id);
+  }
+
+  for (var j = 0; j < oBtns.length; j++) {
+      ~function (j) {
+          oBtns[j].onclick = function () {
+              changeChart(j);
+          }
+      }(j);
+  }
+
+  var oTabApply = document.getElementById("apply_current");
+  var oBtnsApply = oTabApply.getElementsByTagName("span");
+  var oChtsApply = oTabApply.getElementsByClassName("area_chart");
+
+  function changeAreaChart(nIndex) {
+      for (var j = 0; j < oBtnsApply.length; j++) {
+          oBtnsApply[j].className = null;
+          oChtsApply[j].className = "area_chart";
+      }
+      oBtnsApply[nIndex].className = "cur";
+      oChtsApply[nIndex].className = "area_chart cur";
+      updateChart(oChtsApply[nIndex].firstElementChild.id);
+  }
+
+  for (var j = 0; j < oBtnsApply.length; j++) {
+      ~function (j) {
+          oBtnsApply[j].onclick = function () {
+              changeAreaChart(j);
+          }
+      }(j);
+  }
+</script>
+<script type="text/javascript">
+function updateChart(id)
+{
+  if (id == 'department') {
+    $('#' + id).highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: ['业务所', '大数据', '网络所', '安全所', '科管', '无线所', '市场所', '其他'],
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '部所名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+  
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '项目数<br/>(个)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1, 
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+            }    
+        },
+        tooltip: {
+            pointFormat: '{point.y}'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        /*legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },*/
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: [6, 5, 4, 3, 2, 2, 1, 1],
+            color: '#5bbf00'
+        }]
+    });
+  }
+  else if (id == 'project') {
+    $('#' + id).highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: ['和阅读', 'Volte EYE', 'Mulim', '智能卡', 'Dayse', '精分平台', '光纤网平台', '公有云'],
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '项目名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+  
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '运行总时长<br/>(小时)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            tickInterval: 50,   //坐标轴上的刻度线的单位间隔
+            gridLineWidth: 1, 
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+                step: 2   //轴标签显示间隔数
+            }    
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}h'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true   //显示点值
+                }
+            }
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        /*legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },*/
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: [550, 510, 475, 310, 280, 170, 135, 40],
+            color: '#5bbf00'
+        }]
+    });
+  }
+  else if (id == 'cloudPhysical') {
+      $('#' + id).highcharts({
+        chart: {
+            type: 'area',
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            type: 'datetime',
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,   
+            tickLength: 0,    //坐标轴刻度宽度为0
+            tickInterval: 30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            //lineColor: '#999',
+            //lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickInterval: 200,
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                pointStart: Date.UTC(2015, 0, 1),
+                pointIntervalUnit: 'month',
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            valueSuffix: ' 台',
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: 15,
+            y: 100           
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{            
+            name:'虚拟机',
+            data: [200, 430, 500, 550, 630, 700, 750, 830, 950, 1000, 1030, 1100],
+            color: '#5bbf00'
+        },{            
+            name:'物理机',
+            data: [50, 60, 80, 90, 100, 120, 150, 170, 180, 200, 230, 250],
+            color: '#1d9fff'
+        }]
+    });
+  }
+  else{
+    $('#' + id).highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            type: 'datetime',
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,   
+            tickLength: 0,    //坐标轴刻度宽度为0
+            tickInterval: 30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            //lineColor: '#999',
+            //lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickInterval: 200,
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}台'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            type: 'area',
+            data: [200, 430, 500, 550, 630, 700, 750, 830, 950, 1000, 1030, 1100],
+            color: '#1d9fff',
+            pointStart: Date.UTC(2015, 0, 1),
+            pointIntervalUnit: 'month'
+        }]
+    });
+  }
+  
+}
+/* 页面加载时执行 */
+$(function () {
+    $('#project').highcharts({
+        chart: {
+            type: 'bar',
+            spacingTop: 50,
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            categories: ['和阅读', 'Volte EYE', 'Mulim', '智能卡', 'Dayse', '精分平台', '光纤网平台', '公有云'],
+            labels: {
+                style: {
+                    color: '#545454',
+                    fontSize: '13px'
+                }
+            },
+            title: {
+                text: '项目名称',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -10,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickLength: 0   //坐标轴刻度宽度为0
+  
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '运行总时长<br/>(小时)',
+                align: 'high',
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            lineColor: '#999',
+            lineWidth: 2,
+            tickInterval: 50,   //坐标轴上的刻度线的单位间隔
+            gridLineWidth: 1, 
+            labels: {
+                overflow: 'justify',
+                style: {
+                    color: '#323232',
+                    fontSize: '11px'
+                },
+                step: 2   //轴标签显示间隔数
+            }    
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}h'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true   //显示点值
+                }
+            }
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        /*legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 100,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },*/
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: [550, 510, 475, 310, 280, 170, 135, 40],
+            color: '#5bbf00'
+        }]
+    });
+    
+    $('#cloudVirtual').highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            type: 'datetime',
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,   
+            tickLength: 0,    //坐标轴刻度宽度为0
+            tickInterval: 30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '机器数（台）',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            //lineColor: '#999',
+            //lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickInterval: 200,
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            //valueSuffix: ' 小时',
+            pointFormat: '{point.y}台'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            type: 'area',
+            data: [200, 430, 500, 550, 630, 700, 750, 830, 950, 1000, 1030, 1100],
+            color: '#1d9fff',
+            pointStart: Date.UTC(2015, 0, 1),
+            pointIntervalUnit: 'month'
+        }]
+    });
+    
+    $('#failure').highcharts({
+        chart: {
+            zoomType: 'x',
+            spacingTop: 30
+        },
+        title: {
+            text: null,
+        },
+        xAxis: {
+            type: 'datetime',
+            lineColor: '#999',
+            lineWidth: 2,
+            gridLineWidth: 1,   
+            tickLength: 0,    //坐标轴刻度宽度为0
+            tickInterval: 30 * 24 * 3600 * 1000   //坐标轴上的刻度线的单位间隔，时间轴是根据毫秒来计算的
+        },
+        yAxis: {
+            title: {
+                text: '故障数',
+                align: 'high',
+                offset: 0,
+                rotation: 0,
+                y: -15,
+                style: {
+                    color: '#323232',
+                    fontSize: '14px'
+                }
+            },
+            labels: {
+                overflow: 'false'
+            },
+            //lineColor: '#999',
+            //lineWidth: 2,   //轴线宽度为2px
+            gridLineWidth: 1,
+            tickInterval: 2,
+            tickLength: 0
+        },
+        plotOptions: {
+            series: {
+                fillOpacity: 0.1
+            }
+        },
+        tooltip: {
+            pointFormat: '{point.y}'
+        },
+        legend: {
+            enabled: false    //关闭图例
+        },
+        navigation: {
+            buttonOptions: {
+                enabled: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            type: 'area',
+            data: [2, 4, 5, 6, 8, 9, 11, 14, 15, 18, 21, 25],
+            color: '#ff3434',
+            pointStart: Date.UTC(2015, 0, 1),
+            pointIntervalUnit: 'month'
+        }]
+    });
+		
+		/*加载故障信息弹窗代码*/
+		$('.spinnerExample').spinner({});
+    $("#fill").click(function(){
+      $(".dialog_wrp").modal();
+    }); 
+    $("#submit").click(function() {
+			alert($("#year").val() + "年" + $("#month").val() + "月");
+			alert($("#current").val());
+			alert($("#modify").val());
+    });
+});
+</script>
+</body>
+</html>
