@@ -4,8 +4,8 @@
     <section style="">
       <h4>产品服务</h4>
       <ul>
-        <li><a href="/computer">弹性计算</a></li>
-        <li><a href="/bigdata">大数据</a></li>
+        <li><a href="{{ url_for('computer') }}">弹性计算</a></li>
+        <li><a href="{{ url_for('bigdata') }}">大数据</a></li>
       </ul>
     </section>
     <section>
@@ -40,7 +40,7 @@
       <h4>关于我们</h4>
       <ul>
         <li><a href="" target="_blank">开发团队</a></li>
-        <li><a href="/history">运维团队</a></li>
+        <li><a href="{{ url_for('history') }}">运维团队</a></li>
       </ul>
     </section>
     </div>

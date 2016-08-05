@@ -5,7 +5,7 @@ from flask.ext.login import login_required
 from app import app
 from data import _all_days,_project_name,_dept_pnum,_dept_name,\
     _year,_machineNum,_month,virtual_num,virtual_date
-
+from flask_wtform import MyForm
 @app.route('/resource_2')
 #@login_required
 def resource_2():
@@ -33,7 +33,7 @@ def resource_2():
 @app.route('/login',methods=['GET','POST'])
 def login():
     # return render_template("login.html")
-    error = 'no error'
+    error = ''
     if request.method == 'POST':
         if request.form['username'] != 'admin':
             error = 'Invalid username'
@@ -42,3 +42,9 @@ def login():
         else:
             return redirect(url_for('resource_2'))
     return render_template('login.html', error=error)
+# @app.route('/login',methods=['GET','POST'])
+# def submit():
+#     form = MyForm()
+#     if form.validate_on_submit():
+#         return redirect(url_for('resource_2'))
+#     return render_template('login_test.html', form=form)

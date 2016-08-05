@@ -4,12 +4,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta content="IE=11.0000" http-equiv="X-UA-Compatible">
 <title>最新公告</title>
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/news.css">
-<link rel="stylesheet" href="css/docs/qingcloud.css" type="text/css">
-<link rel="stylesheet" href="css/docs/pygments.css" type="text/css">
+<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="static/css/reset.css">
+<link rel="stylesheet" href="static/css/common.css">
+<link rel="stylesheet" href="static/css/news.css">
+<link rel="stylesheet" href="static/css/docs/qingcloud.css" type="text/css">
+<link rel="stylesheet" href="static/css/docs/pygments.css" type="text/css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -17,13 +17,13 @@
 <!-- BEGIN header-->
 <!-- begin menu-->
 <header class="m-header-nav line clearfix nav-fixed2">
-  <section class="head-nav-main w1000"> <a href="http://rdcloud.cmri.cn/" class="head-logo"><img src="images/logo.png" title="资源池"></a>
+  <section class="head-nav-main w1000"> <a href="http://rdcloud.cmri.cn/" class="head-logo"><img src="static/images/logo.png" title="资源池"></a>
     <nav class="head-nav">
       <ul>
-        <li><a href="index.html" class="link">首页</a></li>
-        <li><a href="computer.html" class="link">产品服务</a></li>
-        <li><a href="resource.html" class="link">资源展示</a></li>
-        <li><a href="docs.html" class="link">文档中心</a></li>
+        <li><a href="{{ url_for('index') }}" class="link">首页</a></li>
+        <li><a href="{{ url_for('computer') }}" class="link">产品服务</a></li>
+        <li><a href="{{ url_for('resource') }}" class="link">资源展示</a></li>
+        <li><a href="{{ url_for('docs') }}" class="link">文档中心</a></li>
         <li><a href="http://192.168.57.205:8080/jforum/" target="_blank" class="link">技术论坛</a></li>
       </ul>
       <div class="border-sty" style="">
@@ -78,15 +78,15 @@
     <section style="">
       <h4>产品服务</h4>
       <ul>
-        <li><a href="computer.html">弹性计算</a></li>
-        <li><a href="bigdata.html">大数据</a></li>
+        <li><a href="{{ url_for('computer') }}">弹性计算</a></li>
+        <li><a href="{{ url_for('bigdata') }}">大数据</a></li>
       </ul>
     </section>
     <section>
       <h4>资源管理</h4>
-      <ul>
+      <ul>resource
         <li><a href="http://jira.cmri.cn/browse/RDCLOUD" target="_blank">资源申请</a></li>
-        <li><a href="resource.html">资源展示</a></li>
+        <li><a href="{{ url_for('resource') }}">资源展示</a></li>
       </ul>
     </section>
     <section>
@@ -128,7 +128,7 @@
 <div class="popup popup-browser">
   <div class="popup-in">
     <div class="popup-cont">
-      <p><img src="images/660d0968.jpg" alt=""></p>
+      <p><img src="static/images/660d0968.jpg" alt=""></p>
       <a class="btn-link-close" href="#"></a> <a class="btn-link-download" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"></a>
     </div>
   </div>
@@ -139,11 +139,11 @@
 <div class="c-backTop">
   <span class="c-backTop-btn"></span>
 </div>
-<script type="text/javascript" src="js/jquery-1.js"></script> 
-<script type="text/javascript" src="js/jquery_002.js"></script> 
-<script type="text/javascript" src="js/common.js"></script> 
-<script type="text/javascript" src="js/jquery_002.js"></script> 
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="static/js/jquery-1.js"></script>
+<script type="text/javascript" src="static/js/jquery_002.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
+<script type="text/javascript" src="static/js/jquery_002.js"></script>
+<script type="text/javascript" src="static/js/jquery.js"></script>
 
 </body>
 </html>

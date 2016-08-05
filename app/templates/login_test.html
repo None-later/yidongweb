@@ -22,7 +22,8 @@
                 {% if error %}
                 <p class="error"/> <strong>Error:</strong>{{ error }}
                 {% endif %}
-                <form novalidate id="login_form" action="{{ url_for('login') }}" method="post">
+                <form novalidate id="login_form" action="/login" method="post">
+
 
                     <h1 class="login-title">资源池账号登录</h1>
                     <h4>登录名：</h4>
